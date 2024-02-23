@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>初始命令</title>
+      <link href="/2024/02/23/%E5%88%9D%E5%A7%8B%E5%91%BD%E4%BB%A4/"/>
+      <url>/2024/02/23/%E5%88%9D%E5%A7%8B%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<p>使用命令来新建文章</p><p><code>hexo new [layout] &lt;title&gt;</code></p><p><code>layout 是文章的布局，默认为post，可以先不写。</code><br><code>title 是文章的标题，也是文件的名字，存储在source/_posts下。</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 入门 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2024/02/22/hello-world/"/>
+      <url>/2024/02/22/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试</title>
+      <link href="/2024/02/22/title/"/>
+      <url>/2024/02/22/title/</url>
+      
+        <content type="html"><![CDATA[<p>😅</p><p>H<del>2</del>O</p><mark class="hl-label blue">换色</mark> <h1>哈哈哈哈</h1><hr><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello World!&quot;</span>);</span><br><span class="line">retrun <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><table><thead><tr><th align="center">学号</th><th align="center">姓名</th><th align="center">年龄</th></tr></thead><tbody><tr><td align="center">1234567890</td><td align="center">Eviden</td><td align="center">20</td></tr></tbody></table><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title:</span><br><span class="line">date:</span><br><span class="line">updated:</span><br><span class="line">tags:</span><br><span class="line">categories:</span><br><span class="line">keywords:</span><br><span class="line">description:</span><br><span class="line">top_img:</span><br><span class="line">comments:</span><br><span class="line">cover:</span><br><span class="line">toc:</span><br><span class="line">toc_number:</span><br><span class="line">toc_style_simple:</span><br><span class="line">copyright:</span><br><span class="line">copyright_author:</span><br><span class="line">copyright_author_href:</span><br><span class="line">copyright_url:</span><br><span class="line">copyright_info:</span><br><span class="line">mathjax:</span><br><span class="line">katex:</span><br><span class="line">aplayer:</span><br><span class="line">highlight_shrink:</span><br><span class="line">aside:</span><br><span class="line">abcjs:</span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>写法解释<br><strong>title【必需】文章标题</strong><br><strong>date【必需】文章创建日期</strong><br>updated【可选】文章更新日期<br>tags【可选】文章标签<br>categories【可选】文章分类<br>keywords【可选】文章关键字<br>description【可选】文章描述<br>top_img【可选】文章顶部图片<br>cover【可选】文章缩略图(如果没有设置top_img,文章页顶部将显示缩略图，可设为false&#x2F;图片地址&#x2F;留空)<br>comments【可选】显示文章评论模块(默认 true)<br>toc【可选】显示文章TOC(默认为设置中toc的enable配置)<br>toc_number【可选】显示toc_number(默认为设置中toc的number配置)<br>toc_style_simple【可选】显示 toc 简洁模式<br>copyright【可选】显示文章版权模块(默认为设置中post_copyright的enable配置)<br>copyright_author【可选】文章版权模块的文章作者<br>copyright_author_href【可选】文章版权模块的文章作者链接<br>copyright_url【可选】文章版权模块的文章连结链接<br>copyright_info【可选】文章版权模块的版权声明文字<br>mathjax【可选】显示mathjax(当设置 mathjax 的 per_page: false 时，才需要配置，默认 false )<br>katex【可选】显示 katex (当设置 katex 的 per_page: false 时，才需要配置，默认 false )<br>aplayer【可选】在需要的页面加载 aplayer 的 js 和 css,请参考文章下面的音乐 配置<br>highlight_shrink【可选】配置代码框是否展开(true&#x2F;false)(默认为设置中 highlight_shrink 的配置)<br>aside【可选】显示侧边栏 (默认 true)<br>abcjs<u>【可选】加载 abcjs (当设置 abcjs 的 per_page: false 时，才需要配置，默认 false )</u></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
