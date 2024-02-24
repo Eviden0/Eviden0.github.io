@@ -8,7 +8,9 @@ $.ajax({
     },
     dataType: 'jsonp',
     success: function (res) {
+        console.log = res;
         ipLoacation = res;
+        console.log(ipLoacation);
     }
 })
 function getDistance(e1, n1, e2, n2) {
