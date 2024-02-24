@@ -366,3 +366,110 @@ h6::before {
     -webkit-animation: ccc 6s linear infinite;
     animation: ccc 6s linear infinite;
 }
+
+/* 欢迎信息 */
+#welcome-info {
+    background: linear-gradient(45deg, #b9f4f3, #e3fbf9);
+    border-radius: 18px;
+    padding: 8px;
+}
+
+[data-theme="dark"] #welcome-info {
+    background: #27bfc1;
+}
+
+/* 加载动画 */
+
+.loading-img {
+    background: url(/img/logo.jpeg) no-repeat center center;
+    background-size: cover;
+}
+
+/* 头像状态 */
+.card-info-avatar .author-status-box {
+    position: absolute;
+    bottom: 0;
+    left: calc(100% - 28px);
+    width: 28px;
+    height: 28px;
+    border: 1px solid #d0d7de;
+    border-radius: 2em;
+    background-color: #f8f8f8f8;
+    transition: 0.4s;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .card-info-avatar .author-status-box {
+    background-color: #222222f2;
+    border: 1px solid #5c6060;
+}
+
+.card-info-avatar .author-status-box .author-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    padding: 0 5px;
+}
+
+.card-info-avatar .author-status-box:hover {
+    width: 105px;
+}
+
+.card-info-avatar .author-status-box:hover .author-status span {
+    width: 105px;
+    margin-left: 4px;
+}
+
+.card-info-avatar .author-status-box .author-status span {
+    width: 0;
+    font-size: 12px;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: 0.4s;
+}
+
+.card-widget .card-info-avatar {
+    display: inline-block;
+    position: relative;
+}
+
+
+/* 头像呼吸灯 */
+[data-theme="light"] .avatar-img {
+    animation: huxi_light 4s ease-in-out infinite;
+}
+
+[data-theme="dark"] .avatar-img {
+    animation: huxi_dark 4s ease-in-out infinite;
+}
+
+@keyframes huxi_light {
+    0% {
+        box-shadow: 0px 0px 1px 1px #e9f5fa;
+    }
+
+    50% {
+        box-shadow: 0px 0px 5px 5px #e9f5fa;
+    }
+
+    100% {
+        box-shadow: 0px 0px 1px 1px #e9f5fa;
+    }
+}
+
+@keyframes huxi_dark {
+    0% {
+        box-shadow: 0px 0px 1px 1px #39c5bb;
+    }
+
+    50% {
+        box-shadow: 0px 0px 5px 5px #39c5bb;
+    }
+
+    100% {
+        box-shadow: 0px 0px 1px 1px #39c5bb;
+    }
+}
