@@ -23,25 +23,6 @@
     
     
     <entry>
-      <title>py</title>
-      <link href="/2024/02/25/py/"/>
-      <url>/2024/02/25/py/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> Python </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>内网渗透</title>
       <link href="/2024/02/25/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/"/>
       <url>/2024/02/25/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/</url>
@@ -80,11 +61,11 @@
     
     
     <entry>
-      <title>靶机</title>
+      <title>打靶 or  赛题  平台简介</title>
       <link href="/2024/02/25/%E9%9D%B6%E6%9C%BA/"/>
       <url>/2024/02/25/%E9%9D%B6%E6%9C%BA/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="先整个大介绍吧-方便自己后面找"><a href="#先整个大介绍吧-方便自己后面找" class="headerlink" title="先整个大介绍吧,方便自己后面找"></a>先整个大介绍吧,方便自己后面找</h1><h2 id="CTF题库介绍"><a href="#CTF题库介绍" class="headerlink" title="CTF题库介绍"></a>CTF<del>题库</del>介绍</h2><ol><li><a href="https://www.nssctf.cn/">NSSCTF</a></li><li><a href="https://buuoj.cn/">BUU</a></li><li><a href="https://adworld.xctf.org.cn/home/index">攻防世界</a></li></ol><h2 id="靶机库介绍-干掉一整个主机-更难也更有趣"><a href="#靶机库介绍-干掉一整个主机-更难也更有趣" class="headerlink" title="靶机库介绍(干掉一整个主机,更难也更有趣)"></a>靶机库介绍(干掉一整个主机,更难也更有趣)</h2><ol><li><a href="https://www.vulnhub.com/?page=1">Vulnhub靶场(kali官方的,很有意思!)</a></li><li><font color="red"><a href="https://file.vulnhub.cn/">Vulnhub镜像站</a></font>,<strong>文件编号是官网靶机url对应后几位数字</strong>注意要挂T访问官方网站,貌似国内访问也很卡</li><li><a href="https://tryhackme.com/">Tryhackme(组队打很有意思)</a></li><li><a href="https://www.hackthebox.com/">HackTheBox(难度很大,这两个平台对职业英语都有好处和挑战)</a></li><li><a href="https://github.com/Ignitetechnologies/Privilege-Escalation?tab=readme-ov-file">Vulnhub靶场官方题解,有多解哦!!!</a></li></ol>]]></content>
       
       
       <categories>
@@ -204,7 +185,7 @@
       <link href="/2024/02/24/%E7%BD%AE%E9%A1%B6%E8%BD%AE%E6%92%AD%E5%9B%BE/"/>
       <url>/2024/02/24/%E7%BD%AE%E9%A1%B6%E8%BD%AE%E6%92%AD%E5%9B%BE/</url>
       
-        <content type="html"><![CDATA[<h1 id="写法规范！！！"><a href="#写法规范！！！" class="headerlink" title="写法规范！！！"></a>写法规范！！！</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章标题</span><br><span class="line">date: 创建日期</span><br><span class="line">updated: 更新日期</span><br><span class="line">cover: 文章封面</span><br><span class="line">description: 文章描述</span><br><span class="line">swiper_index: 1 #置顶轮播图顺序，非负整数，数字越大越靠前</span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="写法规范！！！"><a href="#写法规范！！！" class="headerlink" title="写法规范！！！"></a><mark>写法规范！！！</mark></h1><p><font color="red">警告警告警告！</font><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章标题</span><br><span class="line">date: 创建日期</span><br><span class="line">updated: 更新日期</span><br><span class="line">cover: 文章封面</span><br><span class="line">description: 文章描述</span><br><span class="line">swiper_index: 1 #置顶轮播图顺序，非负整数，数字越大越靠前</span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>]]></content>
       
       
       <categories>
