@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Emoji</title>
+      <link href="/2024/02/24/Emoji/"/>
+      <url>/2024/02/24/Emoji/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Markdownの语法</title>
       <link href="/2024/02/24/%E5%88%9D%E5%A7%8B%E8%AF%AD%E6%B3%95/"/>
       <url>/2024/02/24/%E5%88%9D%E5%A7%8B%E8%AF%AD%E6%B3%95/</url>
@@ -36,6 +49,12 @@
         <content type="html"><![CDATA[<h1 id="写法规范！！！"><a href="#写法规范！！！" class="headerlink" title="写法规范！！！"></a>写法规范！！！</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章标题</span><br><span class="line">date: 创建日期</span><br><span class="line">updated: 更新日期</span><br><span class="line">cover: 文章封面</span><br><span class="line">description: 文章描述</span><br><span class="line">swiper_index: 1 #置顶轮播图顺序，非负整数，数字越大越靠前</span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       
       
+      <categories>
+          
+          <category> 教程杂谈 </category>
+          
+      </categories>
+      
       
         <tags>
             
@@ -64,7 +83,7 @@
       
         <tags>
             
-            <tag> 入门 </tag>
+            <tag> Life </tag>
             
         </tags>
       
@@ -82,14 +101,14 @@
       
       <categories>
           
-          <category> Life </category>
+          <category> 教程杂谈 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 入门 </tag>
+            <tag> CTF </tag>
             
         </tags>
       
@@ -114,7 +133,7 @@
       
         <tags>
             
-            <tag> 入门 </tag>
+            <tag> 教程杂谈 </tag>
             
         </tags>
       
@@ -132,10 +151,16 @@
       
       <categories>
           
-          <category> Security </category>
+          <category> 教程杂谈 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> Security </tag>
+            
+        </tags>
       
     </entry>
     
