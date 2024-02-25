@@ -4,6 +4,170 @@
   
     
     <entry>
+      <title>关于博客评论问题&amp;&amp;加载资源缓慢问题</title>
+      <link href="/2024/02/25/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%97%AE%E9%A2%98/"/>
+      <url>/2024/02/25/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<h1 id="说重点"><a href="#说重点" class="headerlink" title="说重点"></a>说重点</h1><h2 id="为啥会卡呢？"><a href="#为啥会卡呢？" class="headerlink" title="为啥会卡呢？"></a>为啥会卡呢？</h2><ol><li>博客所有资源是放在GitHub上的，而且我没买域名。</li><li>没域名就更不用谈有备案了。自然没有了国内CDN加速，且加载的一些花哨js资源本就繁杂，最好建议用电脑端访问，<del>稍微等一下</del>也还是能加载出来的~(<del>所以当个乐子看看就行</del>)</li><li>我的用处也就是记录一下笔记啥的了，所以我觉得有需要或者合适的时候也会升级滴，<strong>到时候再说</strong></li><li>这个框架本身是很小很快(<del><strong>可以跟你细说~</strong></del>)的,即使这个页面这么花哨的情况下,狠狠的绚!</li></ol><hr><h2 id="为啥不能评论？"><a href="#为啥不能评论？" class="headerlink" title="为啥不能评论？"></a>为啥不能评论？</h2><ol><li>没有二级域名(然后自然又<strong>没有CDN加速</strong>，<del>害，悲催</del>)，白嫖的一个国际版数据库.评论数据存在那上了。</li><li>评论系统相当于外包的，就是在一个纯前端的网站加一点点后端吧。所以功能也不强，我也没想对这个功能抱有好大的希望。<del>能用就行</del></li></ol><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol><li><p><strong>有条件的话你就<em>挂个T&amp;&amp;用电脑</em>访问这些页面吧，体验肯定好得多。跟你访问Github一样滴~</strong></p></li><li><p>我用两天时间搭建好基本框架,搞完基础功能后基本就是在改页面了.然后差不多一周时间全部搞定.所以功能就这样了叭,感觉还行,可以看看就行~</p></li><li><h1 id="感谢理解喔"><a href="#感谢理解喔" class="headerlink" title="感谢理解喔~"></a>感谢理解喔~</h1></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程杂谈 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>py</title>
+      <link href="/2024/02/25/py/"/>
+      <url>/2024/02/25/py/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>内网渗透</title>
+      <link href="/2024/02/25/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/"/>
+      <url>/2024/02/25/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 内网渗透 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>开源工具</title>
+      <link href="/2024/02/25/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/"/>
+      <url>/2024/02/25/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 开源工具 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>靶机</title>
+      <link href="/2024/02/25/%E9%9D%B6%E6%9C%BA/"/>
+      <url>/2024/02/25/%E9%9D%B6%E6%9C%BA/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 靶机 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux安全</title>
+      <link href="/2024/02/25/Linux%E5%AE%89%E5%85%A8/"/>
+      <url>/2024/02/25/Linux%E5%AE%89%E5%85%A8/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Python入门</title>
+      <link href="/2024/02/25/Python%E5%85%A5%E9%97%A8/"/>
+      <url>/2024/02/25/Python%E5%85%A5%E9%97%A8/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Python入门第一篇"><a href="#Python入门第一篇" class="headerlink" title="Python入门第一篇"></a>Python入门第一篇</h1><h2 id="Python-基础"><a href="#Python-基础" class="headerlink" title="Python 基础"></a>Python 基础</h2><ul><li>语法基础</li><li>正则表达式</li><li>面向对象风格</li><li>异步与携程(<em>非cpu计算密集型任务</em>)</li><li>Markdown语法的记录</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Coding </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>STL总结</title>
+      <link href="/2024/02/25/STL%E6%80%BB%E7%BB%93/"/>
+      <url>/2024/02/25/STL%E6%80%BB%E7%BB%93/</url>
+      
+        <content type="html"><![CDATA[<h1 id="C-标准模板库，算法入门"><a href="#C-标准模板库，算法入门" class="headerlink" title="C++标准模板库，算法入门"></a>C++标准模板库，算法入门</h1><h2 id="STL六大部件"><a href="#STL六大部件" class="headerlink" title="STL六大部件"></a>STL六大部件</h2><ul><li>容器（Containers）</li><li>分配器（Allocators）</li><li>算法（Algorithm）</li><li>迭代器（Iterators）</li><li>适配器（Adapters）</li><li>仿函数（Functors)</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Coding </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Emoji</title>
       <link href="/2024/02/24/Emoji/"/>
       <url>/2024/02/24/Emoji/</url>
@@ -24,16 +188,10 @@
         <content type="html"><![CDATA[<p>[TOC]</p><h1 id="Markdown-Typora-VSCode-超全教程-给大一新生安利的文本神器"><a href="#Markdown-Typora-VSCode-超全教程-给大一新生安利的文本神器" class="headerlink" title="[Markdown+Typora/VSCode 超全教程] 给大一新生安利的文本神器"></a>[Markdown+Typora/VSCode 超全教程] 给大一新生安利的文本神器</h1><p>Sakiyary 2022/7/16</p><h2 id="😂-简要介绍"><a href="#😂-简要介绍" class="headerlink" title="😂 简要介绍"></a>😂 简要介绍</h2><p><strong>Markdown</strong> 是一种轻量型标记语言, 是一种语法. 以 <code>.md</code> 结尾的文本文件就是 Markdown 文件. 相较于 <strong>Word</strong>, 它更加像是 <strong>HTML</strong> 语言或是 $\LaTeX$, 并不是最淳朴的那种”所见即所得”. 它处处透露着一种极简主义. 高效简洁清晰的同时, 又很简单. 看起来舒服, 语法简单, 尤其在处理纯文本上有很大的优势. </p><p>它相较于 <strong>Word</strong>, 兼容性非常高, 可以跨平台使用, 不用担心奇奇怪怪的版本兼容问题. 同时, 有许多网站都支持或正在使用 <strong>Markdown</strong> 语法. 如 <strong>Github</strong> (等一系列代码托管平台), StackOverflow(等答疑平台), 简书, 语雀 (等一系列笔记平台).</p><h2 id="📐-实际应用"><a href="#📐-实际应用" class="headerlink" title="📐 实际应用"></a>📐 实际应用</h2><p>所有要写文本的时候都可以用上 <strong>Markdown</strong>!</p><p>它可以让你不再纠结什么字体, 什么样式, 什么排版. 而且逻辑清晰, 层次分明.</p><p>像我大一的时候就用 Markdown 来写各种笔记, 演讲稿, 课程论文, 实验报告, 代码的 <code>README.md</code> … 包括本教程文档.</p><h2 id="🍴-工具"><a href="#🍴-工具" class="headerlink" title="🍴 工具"></a>🍴 工具</h2><p>Markdown 只是一种语法. 那么用来写 Markdown 的文本编辑器呢? 我推荐的是 <strong>Typora</strong> 或者 <strong>VS Code</strong></p><h3 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h3><p>Typora 应该是被广泛用于写 Markdown 的文本软件, 就和 Markdown 语法一样高效. 而且它还有很实用的扩展语法与自定义样式的功能. 其能将 <code>.md</code> 导出成多种文件, 如 <code>.pdf</code>, <code>.html</code>, <code>.docx</code> (没想到吧, 能导出到 Word)</p><p>但是现在 Typora 已经发布正式版并且变为收费软件. 中文官网在此 <a href="https://typoraio.cn/">Typora 官方中文站 </a>. </p><p>我当然是推荐大家都用正版啦. 不过价格是永久版￥89, 好在可以用在3台设备上. 如果和你的两位同学/舍友均摊一下, 每人就只要￥30, 和一张游戏月卡差不多. </p><p>至于盗版以及破解方法<a href="https://www.only4.work/blog/?id=379">在此随便找一种改注册表时间方法的</a><del>不介绍(还挺多的其实)</del>.</p><p><del>还有一种免费白嫖的方法就是安装测试版/Beta版. 官网有历史版本的下载链接 <a href="https://typoraio.cn/windows/dev_release.html">Typora 历史版本下载页</a></del></p><p>白嫖Beta版已经寄了, 要么支持正版要么去学习一下破解方法吧 (还是忍不住啦, 看上面的链接👆)</p><h3 id="VS-Code"><a href="#VS-Code" class="headerlink" title="VS Code"></a>VS Code</h3><p>这是微软家的开源文本编辑器, 理论上来说所有代码, 语言, 都可以用 VS Code 来写, 同样是非常的简洁好用. 在下载插件 <strong>Markdown All in One</strong> 后对 Markdown 的基础支持也是非常的好. 若在 VS Code 下载 Markdown 各种附加扩展, 就能获得比 Typora 更加丰富的扩展语法与操作.</p><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>大部分IDE, 像 Jetbrain 的全家桶里应该每一款, 都支持 Markdown 语法, 在此不多赘述.</p><p>本文档主要使用 Typora 进行演示, 同时会介绍许多 Typora 所包含的扩展语法.</p><h2 id="🍭-基础教程"><a href="#🍭-基础教程" class="headerlink" title="🍭 基础教程"></a>🍭 基础教程</h2><p>当有多种标记方法时我会倾向其中一种. </p><p>标题有 <code>*</code> 表示该为扩展语法, 仅在 Typora 或 添加了扩展的 VS Code <strong>本地生效</strong>, 在大多数平台上<strong>并不认可</strong>.</p><h3 id="0-写-Markdown-的第零步"><a href="#0-写-Markdown-的第零步" class="headerlink" title="0. 写 Markdown 的第零步"></a>0. 写 Markdown 的第零步</h3><p>我们写文本的时候大多写的是中文, 可是输入法在输中文时使用的标点为全角标点, 如 <code>，。？！（）【】：；“”</code>. 这些标点是不被 Markdown 所认可的, 也是无法转义的. </p><p>我建议大家写 Markdown 的时候都用半角标点, 即英文标点, 如 <code>,.?!()[]:;&quot;&quot;</code>. 且每个半角标点在文本使用时加上后置空格, 符合英文标点的书写规范, 也更加美观.</p><p>以微软自带输入法举例, 在使用中文输入法时按下 <code>Ctrl</code> + <code>.(这是个句号)</code>, 切换标点的全角与半角. 这样即可中文输入+半角标点.</p><h3 id="1-标题-数个-“-”-空格-前置"><a href="#1-标题-数个-“-”-空格-前置" class="headerlink" title="1. 标题 [数个 “#” + 空格 前置]"></a>1. 标题 [数个 “#” + 空格 前置]</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure><p>标题会在目录与大纲分级显示, 可以跳转. </p><p>在 Typora 中建议开启 <code>严格模式</code>, 即不应为 <code>#标题</code>, 应为 <code># 标题</code>. </p><p>应该要手动补上空格, 使得 Markdown 语法在其他文本编辑器上兼容. </p><h3 id="2-强调-用-“-”-或-“-”-包围"><a href="#2-强调-用-“-”-或-“-”-包围" class="headerlink" title="2. 强调 [用 “**” 或 “__” 包围]"></a>2. 强调 [用 “**” 或 “__” 包围]</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">**欢迎报考南京大学!** (我喜欢用这种)</span><br><span class="line">__欢迎报考南京大学!__</span><br></pre></td></tr></table></figure><p>或者选中想要强调的文字按下 <code>Ctrl</code> + <code>B</code>. </p><p>E.G. </p><p><strong>欢迎报考南京大学!</strong></p><h3 id="3-斜体-用-“-”-或-“-”-包围"><a href="#3-斜体-用-“-”-或-“-”-包围" class="headerlink" title="3. 斜体 [用 “*” 或 “_” 包围]"></a>3. 斜体 [用 “*” 或 “_” 包围]</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*欢迎大佬来浇浇我各种知识* (我喜欢用这种)</span><br><span class="line">_欢迎大佬来浇浇我各种知识_</span><br></pre></td></tr></table></figure><p>或者选中想要强调的文字按下 <code>Ctrl</code> + <code>I</code>. </p><p>E.G. </p><p><em>欢迎大佬来浇浇我各种知识</em></p><p>(P.S. <strong><em>斜体并强调</em></strong> [用 “<em>*</em>“ 或 “<em>_</em>“ 包围])</p><h3 id="4-删除线-用-“-”-包围"><a href="#4-删除线-用-“-”-包围" class="headerlink" title="4. 删除线 [用 “~~” 包围]"></a>4. 删除线 [用 “~~” 包围]</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~我宣布个事儿, 我是Sabiyary!~~</span><br></pre></td></tr></table></figure><p>E.G. </p><p><del>我宣布个事儿, 我是Sabiyary!</del></p><h3 id="5-高亮-用-“-”-包围"><a href="#5-高亮-用-“-”-包围" class="headerlink" title="5. *高亮 [用 “==” 包围]"></a>5. *高亮 [用 “==” 包围]</h3><p><strong>(注意: 此为扩展语法)</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">==我喜欢黄色, 也喜欢绿色==</span><br></pre></td></tr></table></figure><p>E.G. </p><p>==我喜欢黄色, 也喜欢绿色==</p><h3 id="6-代码-用-“-”-包围"><a href="#6-代码-用-“-”-包围" class="headerlink" title="6. 代码 [用 “`” 包围]"></a>6. 代码 [用 “`” 包围]</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`sudo rm -rf /*`</span><br></pre></td></tr></table></figure><p>E.G. </p><p><code>sudo rm -rf /*</code> (没事别乱敲这个! )</p><p><del>“请输入管理员密码: (闪烁的光标)”</del></p><h3 id="7-代码块-按三个-“-”-并敲回车"><a href="#7-代码块-按三个-“-”-并敲回车" class="headerlink" title="7. 代码块 [按三个 “`” 并敲回车]"></a>7. 代码块 [按三个 “`” 并敲回车]</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```</span><br><span class="line"><span class="comment">// 这里就可以开始输入你要的代码了</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">mian</span><span class="params">()</span> &#123;</span><br><span class="line">    print（“Hello, world!\n<span class="string">&quot;）;</span></span><br><span class="line"><span class="string">    retrun O;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">``` // (这三个&quot;</span>`<span class="string">&quot;文本编辑器会帮你自动补全 一般不用手动输)</span></span><br></pre></td></tr></table></figure><p>(我之前都是用这个来展示各种语法的, 应该不用举例了吧)</p><p>要想显示行数的话, 一般要在 Typora 的设置里勾上这个显示行数的选项. </p><p>代码块里可以选择语言, 其会根据语言来自动高亮各个语句. 在选择语言后, <code>``` </code> 会变为 <code>```` </code> + <code>对应语言</code>.</p><h3 id="8-引用-“-gt-”-空格-前置"><a href="#8-引用-“-gt-”-空格-前置" class="headerlink" title="8. 引用 [“&gt;” + 空格 前置]"></a>8. 引用 [“&gt;” + 空格 前置]</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; 24岁, 是学生.</span><br><span class="line">&gt;</span><br><span class="line">&gt; &gt; 学生特有的无处不在(恼)</span><br></pre></td></tr></table></figure><p>引用是可以嵌套的!</p><p>E.G. </p><blockquote><p>24岁, 是学生.</p><blockquote><p>学生特有的无处不在(恼)</p></blockquote></blockquote><h3 id="9-无序列表-“-“-或-“-”-空格-前置"><a href="#9-无序列表-“-“-或-“-”-空格-前置" class="headerlink" title="9. 无序列表 [“-“ 或  “+” + 空格 前置]"></a>9. 无序列表 [“-“ 或  “+” + 空格 前置]</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 一颗是枣树 (我喜欢用这种)</span><br><span class="line">+ 另一颗还是枣树</span><br><span class="line">* (其实这种也可以, 不过由于在 Typora 中很难单个输入, 故不常用)</span><br></pre></td></tr></table></figure><p>三种前置符都可以, 敲回车会自动补全, 可在 Typora 设置中调整补全的符号, 敲回车后按下 <code>Tab</code> 会缩进一级. </p><p>E.G. </p><ul><li>一颗是枣树</li><li>另一颗还是枣树</li></ul><h3 id="10-有序列表-数字-“-”-空格-前置"><a href="#10-有序列表-数字-“-”-空格-前置" class="headerlink" title="10. 有序列表 [数字 + “.” + 空格 前置]"></a>10. 有序列表 [数字 + “.” + 空格 前置]</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">我来这里就为了三件事:</span><br><span class="line">1. 公平</span><br><span class="line">2. 公平</span><br><span class="line">3. 还是tm的公平!</span><br></pre></td></tr></table></figure><p>敲回车会自动补全, 敲回车后按下 <code>Tab</code> 会缩进一级. </p><p>E.G. </p><p>我来这里就为了三件事:</p><ol><li>公平</li><li><p>公平</p></li><li><p>还是tm的公平!</p></li></ol><h3 id="11-上标-用-“-”-包围"><a href="#11-上标-用-“-”-包围" class="headerlink" title="11. *上标 [用 “^” 包围]"></a>11. *上标 [用 “^” 包围]</h3><p><strong>(注意: 此为扩展语法)</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C语言中int的上限是 2^31^ - 1 = 2147483647</span><br></pre></td></tr></table></figure><p>E.G. </p><p>C语言中 <code>int</code> 的上限是 2^31^ - 1 = 2147483647</p><h3 id="12-下标-用-“-”-包围"><a href="#12-下标-用-“-”-包围" class="headerlink" title="12. *下标 [用 “~” 包围]"></a>12. *下标 [用 “~” 包围]</h3><p><strong>(注意: 此为扩展语法)</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">H~2~O 是剧毒的!</span><br></pre></td></tr></table></figure><p>E.G. </p><p>H~2~O 是剧毒的!</p><h3 id="13-注释-“-后置"><a href="#13-注释-“-后置" class="headerlink" title="13. *注释 [“]" 后置"></a>13. *注释 [“<sup><a href="#fn_]" 后置" id="reffn_]" 后置">]" 后置</a></sup></h3><p><strong>(注意: 此为扩展语法)</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; 今日我们相聚于此, 是为了学习 Markdown 的使用, 它的教程对于全体「观众」而言, 值得足足两个硬币的支持鼓励![^1]</span><br><span class="line"></span><br><span class="line">[^1]: 沃兹·基·硕德 改编自「公鸡」普契涅拉.</span><br></pre></td></tr></table></figure><p>需要在文末写上注释对应的内容</p><p>E.G. </p><blockquote><p>今日我们相聚于此, 是为了学习 Markdown 的使用, 它的教程对于全体「观众」而言, 值得足足两个硬币的支持鼓励<sup><a href="#fn_1" id="reffn_1">1</a></sup></p></blockquote><blockquote id="fn_1"><sup>1</sup>. 沃兹·基·硕德 改编自「公鸡」普契涅拉.<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a></blockquote><h3 id="14-链接-常用-“-”-“-”-分别包围文本与链接"><a href="#14-链接-常用-“-”-“-”-分别包围文本与链接" class="headerlink" title="14. 链接 [常用 “[ ]” + “( )” 分别包围文本与链接]"></a>14. 链接 [常用 “[ ]” + “( )” 分别包围文本与链接]</h3><p><strong>(注意: 文内跳转为扩展用法)</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[来看看我贫瘠的仓库罢](https://github.com/Sakiyary)</span><br><span class="line">[基础教程: 12. 下标](#12. 下标 [用 &quot;~&quot; 包围])</span><br></pre></td></tr></table></figure><p>支持网页链接与文内跳转, 按住 <code>Ctrl</code> 并 <code>单击鼠标左键</code> 即可跳转.</p><p>E.G. </p><p><a href="https://github.com/Sakiyary">来看看我贫瘠的仓库罢</a></p><p><a href="#12. 下标 [用 &quot;~&quot; 包围]">基础教程: 12. 下标</a></p><h3 id="15-任务列表-“-”-空格-前置"><a href="#15-任务列表-“-”-空格-前置" class="headerlink" title="15. 任务列表 [“- [ ]” + 空格 前置]"></a>15. 任务列表 [“- [ ]” + 空格 前置]</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">TodoList:</span><br><span class="line">- [ ] 刷B站</span><br><span class="line">- [ ] 写代码</span><br><span class="line">- [x] 起床</span><br></pre></td></tr></table></figure><p>用 <code>x</code> 代替 <code>[ ]</code> 中的空格来勾选任务列表. 在 Typora 中可以直接用鼠标左键单击勾选框.</p><p>E.G. TodoList:</p><ul><li>[ ] 刷B站</li><li>[ ] 写代码</li><li>[x] 起床</li></ul><h3 id="16-表格-用-“-”-绘制表格边框"><a href="#16-表格-用-“-”-绘制表格边框" class="headerlink" title="16. 表格 [用 “|” 绘制表格边框]"></a>16. 表格 [用 “|” 绘制表格边框]</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| 学号 | 姓名  | 年龄 |</span><br><span class="line">| :--- | :---: | ---: | (引号的位置代表着 左对齐, 居中, 右对齐)</span><br><span class="line">|114514|田所|24|</span><br><span class="line">|1919810|浩三|25|</span><br></pre></td></tr></table></figure><p>第一行为表头, 并由第二行分割线决定对齐方式与长度, 第三行及之后即表格数据</p><p>E.G. </p><div class="table-container"><table><thead><tr><th style="text-align:left">学号</th><th style="text-align:center">姓名</th><th style="text-align:right">年龄</th></tr></thead><tbody><tr><td style="text-align:left">114514</td><td style="text-align:center">田所</td><td style="text-align:right">24</td></tr><tr><td style="text-align:left">1919810</td><td style="text-align:center">浩三</td><td style="text-align:right">25</td></tr></tbody></table></div><h3 id="17-图片-直接拖进来或者复制粘贴"><a href="#17-图片-直接拖进来或者复制粘贴" class="headerlink" title="17. 图片 [直接拖进来或者复制粘贴]"></a>17. 图片 [直接拖进来或者复制粘贴]</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![图片](图片的位置)</span><br></pre></td></tr></table></figure><p>我还是会选择拖进来或者复制粘贴啦~ 在 Typora 的设置里也可以改图片的储存方式. </p><h3 id="18-分割线-按三个-“-”-或-“-“-或-“-”-并敲回车"><a href="#18-分割线-按三个-“-”-或-“-“-或-“-”-并敲回车" class="headerlink" title="18. 分割线 [按三个 “*” 或 “-“ 或 “_” 并敲回车]"></a>18. 分割线 [按三个 “*” 或 “-“ 或 “_” 并敲回车]</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">***</span><br><span class="line">--- (我喜欢用这种)</span><br><span class="line">___</span><br><span class="line">// (其实按三个及以上都可以)</span><br></pre></td></tr></table></figure><p>由于 <code>*</code> 与 <code>_</code> 均会自动补全, 所以我觉得 <code>-</code> 最为方便.</p><p>E.G. </p><hr><hr><hr><h3 id="19-Emoji表情-“-”-前置"><a href="#19-Emoji表情-“-”-前置" class="headerlink" title="19. Emoji表情 [“:” 前置]"></a>19. Emoji表情 [“:” 前置]</h3><p><strong>(注意: 英文输入为扩展语法)</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:sweat_smile: </span><br><span class="line">:drooling_face:</span><br><span class="line">:clown_face:</span><br><span class="line">// (敲回车或者鼠标点击, 后置的&quot;:&quot;一般不需要手动输)</span><br></pre></td></tr></table></figure><p>这个功能唯一的要求就是英语水平要高, 或者大概记得各个 Emoji 的英文名. </p><p>E.G. </p><p>:sweat_smile:<br>:drooling_face:<br>:clown_face:</p><p>对于其余普通的 Markdown 文本编辑器, 可以直接将 Emoji 表情复制进来, 这是直接<strong>硬编码</strong>的 (<del>刻进DNA里</del>)</p><p>E.G. </p><p>😅🤤🤡</p><p>用好这个功能可以让你的文本非常的可爱! <del>太抽象了</del></p><p>这里分享一个可以复制<a href="https://emojipedia.org/apple/">全Emoji的网站</a>, 非常好用! 我之前的C语言大作业也是从这里下载的资源! </p><h2 id="🔥-进阶教程"><a href="#🔥-进阶教程" class="headerlink" title="🔥 进阶教程"></a>🔥 进阶教程</h2><h3 id="1-目录-自动生成"><a href="#1-目录-自动生成" class="headerlink" title="1. 目录 [自动生成]"></a>1. 目录 [自动生成]</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[TOC] (此为 Typora 特有的, 如本文档开头)</span><br></pre></td></tr></table></figure><p>若使用 VS Code 搭配 Markdown All in One 扩展, 可在 VS Code 的<code>命令面板</code> (即 <a href="https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette">VS Code Command Palette</a>) 输入 <code>Create Table of Contents</code> 自动生成目录, 且可在扩展设置中细调目录参数.</p><h3 id="2-内联-HTML-代码-用-“-“-包围"><a href="#2-内联-HTML-代码-用-“-“-包围" class="headerlink" title="2. 内联 HTML 代码 [用 “ “ 包围]"></a>2. 内联 HTML 代码 [用 “<> </>“ 包围]</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;text-align:center&quot;&gt;</span><br><span class="line">  &lt;font style=&quot;color:red&quot;&gt;我不会 HTML 呜呜呜... 浇浇我&lt;/font&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;center&gt;简单的文字居中也可以这样&lt;/center&gt;</span><br><span class="line"></span><br><span class="line">&lt;u&gt;我差点忘了还有下划线这东西...&lt;/u&gt;</span><br></pre></td></tr></table></figure><p>只要你会写, 你完全可以把 Markdown 当作 <strong>HTML</strong> 来写.</p><p>同时, <code>.md</code> 文件可以直接导出成一个网页.</p><p>下划线可以选中想要下划的文字按下 <code>Ctrl</code> + <code>U</code>. </p><p>E.G. </p><div style="text-align:center">  <font style="color:red">我不会 HTML 呜呜呜... 浇浇我</font></div><center>简单的文字居中也可以这样</center><p><u>我差点忘了还有下划线这东西…</u></p><h3 id="3-内联-LaTeX-公式-用-“-”-包围"><a href="#3-内联-LaTeX-公式-用-“-”-包围" class="headerlink" title="3. 内联 $\LaTeX$ 公式 [用 “$” 包围]"></a>3. 内联 $\LaTeX$ 公式 [用 “$” 包围]</h3><p><strong>(注意: 部分编译器会不识别部分符号)</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$\LaTeX$ 是最好用的论文排版语言! 不信你看!</span><br><span class="line"></span><br><span class="line">$a^n+b^n=c^n$</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">%\usepackage&#123;unicode-math&#125;</span><br><span class="line">\displaystyle \ointctrclockwise\mathcal&#123;D&#125;[x(t)]</span><br><span class="line">\sqrt&#123;\frac&#123;\displaystyle3\uppi^2-\sum_&#123;q=0&#125;^&#123;\infty&#125;(z+\hat L)^&#123;q&#125;</span><br><span class="line">\exp(\symrm&#123;i&#125;q^2 \hbar x)&#125;&#123;\displaystyle (\symsfup&#123;Tr&#125;\symbfcal&#123;A&#125;)</span><br><span class="line">\left(\symbf\Lambda_&#123;j_1j_2&#125;^&#123;i_1i_2&#125;\Gamma_&#123;i_1i_2&#125;^&#123;j_1j_2&#125;</span><br><span class="line">\hookrightarrow\vec D\cdot \symbf P \right)&#125;&#125;</span><br><span class="line">=\underbrace&#123;\widetilde&#123;\left\langle \frac&#123;\notin \emptyset&#125;</span><br><span class="line">&#123;\varpi\alpha_&#123;k\uparrow&#125;&#125;\middle\vert</span><br><span class="line">\frac&#123;\partial_\mu T_&#123;\mu\nu&#125;&#125;&#123;2&#125;\right\rangle&#125;&#125;_&#123;\mathrm&#123;K&#125;_3</span><br><span class="line">\mathrm&#123;Fe&#125;(\mathrm&#123;CN&#125;)_6&#125; ,\forall z \in \mathbb&#123;R&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure><p>用 <script type="math/tex">` 包围为单条公式, 按下两个 `</script> 并敲回车即生成公式块.</p><p>E.G. </p><p>$\LaTeX$ 是最好用的论文排版语言! 不信你看!</p><p>$a^n+b^n=c^n$</p><script type="math/tex; mode=display">%\usepackage{unicode-math}\displaystyle \ointctrclockwise\mathcal{D}[x(t)]\sqrt{\frac{\displaystyle3\uppi^2-\sum_{q=0}^{\infty}(z+\hat L)^{q}\exp(\symrm{i}q^2 \hbar x)}{\displaystyle (\symsfup{Tr}\symbfcal{A})\left(\symbf\Lambda_{j_1j_2}^{i_1i_2}\Gamma_{i_1i_2}^{j_1j_2}\hookrightarrow\vec D\cdot \symbf P \right)}}=\underbrace{\widetilde{\left\langle \frac{\notin \emptyset}{\varpi\alpha_{k\uparrow}}\middle\vert\frac{\partial_\mu T_{\mu\nu}}{2}\right\rangle}}_{\mathrm{K}_3\mathrm{Fe}(\mathrm{CN})_6} ,\forall z \in \mathbb{R}</script><h3 id="4-网络图床"><a href="#4-网络图床" class="headerlink" title="4. *网络图床"></a>4. *网络图床</h3><p>(这是学长给我的网络图床教程, 我并未实践过…)</p><p>分享一个 Typora 搭配腾讯云COS/阿里云OSS图床的<a href="https://blog.csdn.net/guo_ridgepole/article/details/108257277">例子</a>. 新用户免费试用6个月, 另外还可选择七牛云或者路过图床.</p><h3 id="5-Typora-的常用快捷键"><a href="#5-Typora-的常用快捷键" class="headerlink" title="5. *Typora 的常用快捷键"></a>5. *Typora 的常用快捷键</h3><div class="table-container"><table><thead><tr><th style="text-align:center">按键</th><th style="text-align:center">效果</th><th style="text-align:center">按键</th><th style="text-align:center">效果</th></tr></thead><tbody><tr><td style="text-align:center"><code>Ctrl</code> + <code>D</code></td><td style="text-align:center">选中当前词</td><td style="text-align:center"><code>Ctrl</code> + <code>L</code></td><td style="text-align:center">选中当前句/行</td></tr><tr><td style="text-align:center"><code>Ctrl</code> + <code>E</code></td><td style="text-align:center">选中当前区块</td><td style="text-align:center"><code>Ctrl</code> + <code>F</code></td><td style="text-align:center">搜索当前选中</td></tr><tr><td style="text-align:center"><code>Ctrl</code> + <code>B</code></td><td style="text-align:center">加粗当前选中</td><td style="text-align:center"><code>Ctrl</code> + <code>H</code></td><td style="text-align:center">替换当前选中</td></tr><tr><td style="text-align:center"><code>Ctrl</code> + <code>I</code></td><td style="text-align:center">倾斜当前选中</td><td style="text-align:center"><code>Ctrl</code> + <code>U</code></td><td style="text-align:center">下划当前选中</td></tr><tr><td style="text-align:center"><code>Ctrl</code> + <code>K</code></td><td style="text-align:center">将当前选中生成链接</td><td style="text-align:center"><code>Ctrl</code> + <code>J</code></td><td style="text-align:center">滚动屏幕将选中滚至顶部</td></tr><tr><td style="text-align:center"><code>Ctrl</code> + <code>W</code></td><td style="text-align:center">关闭当前窗口</td><td style="text-align:center"><code>Ctrl</code> + <code>N</code></td><td style="text-align:center">打开新窗口</td></tr><tr><td style="text-align:center"><code>Ctrl</code> + <code>O</code></td><td style="text-align:center">打开文件</td><td style="text-align:center"><code>Ctrl</code> + <code>P</code></td><td style="text-align:center">搜索文件并打开</td></tr><tr><td style="text-align:center"><code>Ctrl</code> + <code>回车</code></td><td style="text-align:center">表格下方插入行</td><td style="text-align:center"><code>Ctrl</code> + <code>,</code></td><td style="text-align:center">打开偏好设置</td></tr><tr><td style="text-align:center"><code>Ctrl</code> + <code>.</code></td><td style="text-align:center">切换全角/半角标点</td><td style="text-align:center"><code>Ctrl</code> + <code>/</code></td><td style="text-align:center">切换正常/源代码视图</td></tr><tr><td style="text-align:center"><code>Ctrl</code> + <code>Shift</code> + <code>-</code></td><td style="text-align:center">缩小视图缩放</td><td style="text-align:center"><code>Ctrl</code> + <code>Shift</code> + <code>+</code></td><td style="text-align:center">放大视图缩放</td></tr></tbody></table></div><p>还有一些不常用的/三键的快捷键不在此列出.</p><h3 id="6-Typora-的主题样式与检查元素"><a href="#6-Typora-的主题样式与检查元素" class="headerlink" title="6. *Typora 的主题样式与检查元素"></a>6. *Typora 的主题样式与检查元素</h3><p>Markdown 在编译后约等于 HTML. 而 Typora 的正常视图就是编译后的 Markdown, 故Typora的主题样式本质就是 CSS 文件.</p><p>可以下载各种好看的主题给 Typora换上, 同时也可以自己调整对应的 CSS 文件, 或者自己手搓. </p><p>在 Typora 设置中开启 <code>调试模式</code> 后即可在正常视图右击打开 <code>检查元素</code>, 在其中就可以完全将 Markdown 文件当成 HTML 来编辑.</p><h2 id="💯-总结"><a href="#💯-总结" class="headerlink" title="💯 总结"></a>💯 总结</h2><p>至此, <strong>Markdown + Typora / VSCode</strong> 的手册教程也告一段落. </p><p>不知你看完这么长的教程/手册, 是否能体会到 Markdown 的精妙简洁之处呢? </p><p>其实 Markdown 只是标记语言的最开始, 我的感受是会了 Markdown 之后对于理解 HTML 也有帮助, 对于用 $\LaTeX$ 来写论文也有帮助. 标记语言正是为了摆脱 Word 那种虽然”所见即所得”, 但又过于花哨浮华, 很差的兼容性与闭源的编码的缺陷. 当你能掌握这样的”所写即所得”时, 你肯定会感受到用 Markdown 这类语言来处理文本的妙处!<br>```</p>]]></content>
       
       
-      <categories>
-          
-          <category> Life </category>
-          
-      </categories>
-      
       
         <tags>
             
-            <tag> 入门 </tag>
+            <tag> Life </tag>
             
         </tags>
       
@@ -73,12 +231,6 @@
       
         <content type="html"><![CDATA[<h2 id="第一个blog-居然有点像日记的感觉"><a href="#第一个blog-居然有点像日记的感觉" class="headerlink" title="第一个blog,居然有点像日记的感觉"></a>第一个blog,居然有点像日记的感觉</h2><hr><p>明天元宵节咯。<strong>我直接嘎嘎吃</strong> 🐖 Markdown语法真的好难记啊，或者说好难写, 手冷我是一点不想动,弗兰的这鬼天气到底什么鬼喔!</p><p>2024又是个关键的开始,第一个blog网站搭建好了,算是没给自己今年增加负担咯.</p><p>今年最难的就是算法了吧,以后一定要多多记好笔记到这上面来.别再用你那狗屎浏览器收藏夹点进去后再也没看过基本上,显得杂乱的很.</p><p>其次是web笔记吧,感觉理论知识欠缺的还是多,而且经验不足.多跟大佬学习,记录下来!</p><p>这几天<strong>发癫式</strong>写网站,只能说之前玩的还挺好,现在知道辛苦了吧!</p><p>以后少熬夜,对身体真的不好!</p><p>好了,不多哔哔了,明天去外婆家过节了!😀</p><h1 id="早点睡-别熬夜-提效率-强效果"><a href="#早点睡-别熬夜-提效率-强效果" class="headerlink" title="早点睡 别熬夜 提效率 强效果"></a>早点睡 别熬夜 提效率 强效果</h1><p>~ bye ~</p><p><strong>还是冷冷冷,真的<em>好</em> <em>冷</em> 啊!</strong></p>]]></content>
       
-      
-      <categories>
-          
-          <category> Life </category>
-          
-      </categories>
       
       
         <tags>
