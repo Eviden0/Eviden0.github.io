@@ -1,17 +1,16 @@
-<!DOCTYPE html><html lang="zh_CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>STL总结 | Eviden's Blog</title><meta name="author" content="Eviden"><meta name="copyright" content="Eviden"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="C++ -- STL总结">
+<!DOCTYPE html><html lang="zh_CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Eviden's Blog | Eviden's Blog</title><meta name="author" content="Eviden"><meta name="copyright" content="Eviden"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="C++ 标准模板库 (STL, Standard Template Library)：包含一些常用数据结构与算法的模板的 C++ 软件库。其包含四个组件——算法 (Algorithms)、容器 (Containers)、仿函数 (Functors)、迭代器 (Iterators).">
 <meta property="og:type" content="article">
-<meta property="og:title" content="STL总结">
+<meta property="og:title" content="Eviden&#39;s Blog">
 <meta property="og:url" content="https://eviden0.github.io/2024/02/25/STL%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Eviden&#39;s Blog">
-<meta property="og:description" content="C++ -- STL总结">
+<meta property="og:description" content="C++ 标准模板库 (STL, Standard Template Library)：包含一些常用数据结构与算法的模板的 C++ 软件库。其包含四个组件——算法 (Algorithms)、容器 (Containers)、仿函数 (Functors)、迭代器 (Iterators).">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://eviden0.github.io/img/c10.jpg">
-<meta property="article:published_time" content="2024-02-25T04:42:52.000Z">
-<meta property="article:modified_time" content="2024-02-25T05:04:56.315Z">
+<meta property="og:image" content="https://eviden0.github.io/img/c5.jpg">
+<meta property="article:published_time" content="2024-02-25T14:58:28.929Z">
+<meta property="article:modified_time" content="2024-02-25T14:58:51.472Z">
 <meta property="article:author" content="Eviden">
-<meta property="article:tag" content="Coding">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://eviden0.github.io/img/c10.jpg"><link rel="shortcut icon" href="/img/page_logo.jpg"><link rel="canonical" href="https://eviden0.github.io/2024/02/25/STL%E6%80%BB%E7%BB%93/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.12.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+<meta name="twitter:image" content="https://eviden0.github.io/img/c5.jpg"><link rel="shortcut icon" href="/img/page_logo.jpg"><link rel="canonical" href="https://eviden0.github.io/2024/02/25/STL%E6%80%BB%E7%BB%93/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.12.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
   localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found"}},
@@ -51,12 +50,12 @@
   },
   autoDarkmode: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'STL总结',
+  title: 'Eviden\'s Blog',
   isPost: true,
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2024-02-25 13:04:56'
+  postUpdate: '2024-02-25 22:58:51'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {
@@ -160,7 +159,7 @@
     })(window)</script><link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/progress_bar.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/cat.css"><link rel="stylesheet" href="/css/readPercent.css"><link rel="stylesheet" href="/css/iconfont.css"><div id="myscoll"></div><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
 <style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
   white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
-<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
   endLoading: () => {
     document.body.style.overflow = 'auto';
     document.getElementById('loading-box').classList.add("loaded")
@@ -183,15 +182,844 @@ if (true) {
 document.addEventListener('pjax:send', () => {
   Pace.restart()
 })
-</script><link rel="stylesheet" href="/css/progress_bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/logo.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/me"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/img/c10.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Eviden's Blog"><img class="site-icon" src="/img/logo.jpeg"/><span class="site-name">Eviden's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/me"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">STL总结</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-02-25T04:42:52.000Z" title="Created 2024-02-25 12:42:52">2024-02-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-02-25T05:04:56.315Z" title="Updated 2024-02-25 13:04:56">2024-02-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/C/">C++</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">37</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>1mins</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="STL总结"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="C-标准模板库，算法入门"><a href="#C-标准模板库，算法入门" class="headerlink" title="C++标准模板库，算法入门"></a>C++标准模板库，算法入门</h1><h2 id="STL六大部件"><a href="#STL六大部件" class="headerlink" title="STL六大部件"></a>STL六大部件</h2><ul>
-<li>容器（Containers）</li>
-<li>分配器（Allocators）</li>
-<li>算法（Algorithm）</li>
-<li>迭代器（Iterators）</li>
-<li>适配器（Adapters）</li>
-<li>仿函数（Functors)</li>
+</script><link rel="stylesheet" href="/css/progress_bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/logo.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/me"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/img/c5.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Eviden's Blog"><img class="site-icon" src="/img/logo.jpeg"/><span class="site-name">Eviden's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/me"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Untitled</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-02-25T14:58:28.929Z" title="Created 2024-02-25 22:58:28">2024-02-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-02-25T14:58:51.472Z" title="Updated 2024-02-25 22:58:51">2024-02-25</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">6.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>26mins</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">Comments:</span><a href="/2024/02/25/STL%E6%80%BB%E7%BB%93/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/2024/02/25/STL%E6%80%BB%E7%BB%93/" itemprop="commentCount"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>C++ 标准模板库 (STL, Standard Template Library)</strong>：包含一些常用数据结构与算法的模板的 C++ 软件库。其包含四个组件——算法 (Algorithms)、容器 (Containers)、仿函数 (Functors)、迭代器 (Iterators).</p>
+<span id="more"></span>
+<p>示例：</p>
+<ul>
+<li>算法：<code>sort(a.begin(), a.end())</code></li>
+<li>容器：<code>priority_queue&lt;int&gt; pque</code></li>
+<li>仿函数：<code>greater&lt;int&gt;()</code></li>
+<li>迭代器：<code>vector&lt;int&gt;::iterator it = a.begin()</code></li>
 </ul>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://eviden0.github.io">Eviden</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://eviden0.github.io/2024/02/25/STL%E6%80%BB%E7%BB%93/">https://eviden0.github.io/2024/02/25/STL%E6%80%BB%E7%BB%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Coding/">Coding</a></div><div class="post_share"><div class="social-share" data-image="/img/c10.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2024/02/25/Python%E5%85%A5%E9%97%A8/" title="Python入门"><img class="cover" src="/img/c1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-02-25</div><div class="title">Python入门</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="card-info-avatar"><div class="avatar-img"><img src="/img/logo.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-status-box"><div class="author-status"><g-emoji class="g-emoji" alias="palm_tree" fallback-src="https://lskypro.acozycotage.net/LightPicture/2022/12/fe1dc0402e623096.jpg">🐟</g-emoji><span>认真摸鱼中</span></div></div></div><div class="author-info__name">Eviden</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Eviden0"><i class="fab fa-github"></i><span>Follow Me To Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Eviden0" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/%E7%A7%81%E5%AF%86@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">😍看看看，还是tm的看~😍</div><div id="welcome-info"></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C-%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93%EF%BC%8C%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8"><span class="toc-number">1.</span> <span class="toc-text">C++标准模板库，算法入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#STL%E5%85%AD%E5%A4%A7%E9%83%A8%E4%BB%B6"><span class="toc-number">1.1.</span> <span class="toc-text">STL六大部件</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/02/25/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%97%AE%E9%A2%98/" title="关于博客评论问题&amp;&amp;加载资源缓慢问题"><img src="https://icweiliimg1.pstatp.com/weili/bl/257489233706746094.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于博客评论问题&amp;&amp;加载资源缓慢问题"/></a><div class="content"><a class="title" href="/2024/02/25/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%97%AE%E9%A2%98/" title="关于博客评论问题&amp;&amp;加载资源缓慢问题">关于博客评论问题&amp;&amp;加载资源缓慢问题</a><time datetime="2024-02-25T07:09:28.000Z" title="Created 2024-02-25 15:09:28">2024-02-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/02/25/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" title="内网渗透"><img src="/img/c7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="内网渗透"/></a><div class="content"><a class="title" href="/2024/02/25/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" title="内网渗透">内网渗透</a><time datetime="2024-02-25T06:49:26.000Z" title="Created 2024-02-25 14:49:26">2024-02-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/02/25/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/" title="开源工具"><img src="/img/c8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="开源工具"/></a><div class="content"><a class="title" href="/2024/02/25/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/" title="开源工具">开源工具</a><time datetime="2024-02-25T06:41:44.000Z" title="Created 2024-02-25 14:41:44">2024-02-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/02/25/%E9%9D%B6%E6%9C%BA/" title="打靶 or  赛题  平台简介"><img src="/img/c2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="打靶 or  赛题  平台简介"/></a><div class="content"><a class="title" href="/2024/02/25/%E9%9D%B6%E6%9C%BA/" title="打靶 or  赛题  平台简介">打靶 or  赛题  平台简介</a><time datetime="2024-02-25T06:41:39.000Z" title="Created 2024-02-25 14:41:39">2024-02-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/02/25/Linux%E5%AE%89%E5%85%A8/" title="Linux安全"><img src="/img/c9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux安全"/></a><div class="content"><a class="title" href="/2024/02/25/Linux%E5%AE%89%E5%85%A8/" title="Linux安全">Linux安全</a><time datetime="2024-02-25T06:41:34.000Z" title="Created 2024-02-25 14:41:34">2024-02-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 By Eviden</div><div class="footer_custom_text">I wish you to become your own sun, no need to rely on who's light.<p><a target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Coding-0cedbe?style=flat&logo=Codio" title="本站采用双线部署，联通线路托管于Coding"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Toggle Between Traditional Chinese And Simplified Chinese">繁</button><a class="icon-V hidden" onclick="switchNightMode()" title="Toggle Between Light And Dark Mode"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i><span id="percent">0<span>%</span></span></button><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="/js/tw_cn.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.19.0/js/md5.min.js"></script><script>window.addEventListener('load', () => {
+<h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1 前言"></a>1 前言</h1><p>STL 作为一个封装良好，性能合格的 C++ 标准库，在算法竞赛中运用极其常见。灵活且正确使用 STL 可以节省非常多解题时间，这一点不仅是由于可以直接调用，还是因为它封装良好，可以让代码的可读性变高，解题思路更清晰，调试过程 <del>往往</del> 更顺利。</p>
+<p>不过 STL 毕竟使用了很多复杂的结构来实现丰富的功能，它的效率往往是比不上自己手搓针对特定题目的数据结构与算法的。因此，STL 的使用相当于使用更长的运行时间换取更高的编程效率。因此，在实际比赛中要权衡 STL 的利弊，不过这一点就得靠经验了。</p>
+<p>接下来，我会分享在算法竞赛中常用的 STL 容器和算法，对于函数和迭代器，就不着重展开讲了。</p>
+<h1 id="2-常用容器"><a href="#2-常用容器" class="headerlink" title="2 常用容器"></a>2 常用容器</h1><h2 id="2-1-内容总览"><a href="#2-1-内容总览" class="headerlink" title="2.1 内容总览"></a>2.1 内容总览</h2><p>打勾的是本次将会详细讲解的，加粗的是算法竞赛中有必要学习的。</p>
+<ul>
+<li><p>顺序容器</p>
+<ul>
+<li><p>[ ] <strong>array</strong></p>
+</li>
+<li><p>[x] <strong>vector</strong></p>
+</li>
+<li>[ ] <strong>deque</strong></li>
+<li>[ ] forward_list</li>
+<li>[ ] <strong>list</strong></li>
+</ul>
+</li>
+<li><p>关联容器</p>
+<ul>
+<li>[x] <strong>set</strong></li>
+<li>[x] <strong>map</strong></li>
+<li>[ ] <strong>multiset</strong></li>
+<li>[ ] <strong>multimap</strong></li>
+</ul>
+</li>
+<li><p>无序关联容器</p>
+<ul>
+<li>[ ] <strong>unordered_set</strong></li>
+<li>[ ] <strong>unordered_map</strong></li>
+<li>[ ] <strong>unordered_multiset</strong></li>
+<li>[ ] <strong>unordered_multimap</strong></li>
+</ul>
+</li>
+<li><p>容器适配器</p>
+<ul>
+<li>[x] <strong>stack</strong></li>
+<li>[x] <strong>queue</strong></li>
+<li>[x] <strong>priority_queue</strong></li>
+<li>[ ] flat_set</li>
+<li>[ ] flat_map</li>
+<li>[ ] flat_multiset</li>
+<li>[ ] flat_multimap</li>
+</ul>
+</li>
+<li><p>字符串</p>
+<ul>
+<li>[x] <strong>string</strong> (basic_string\<char\>)</li>
+</ul>
+</li>
+<li><p>对与元组</p>
+<ul>
+<li>[x] <strong>pair</strong></li>
+<li>[ ] <strong>tuple</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="2-2-向量-vector"><a href="#2-2-向量-vector" class="headerlink" title="2.2 向量 vector"></a>2.2 向量 <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/container/vector">vector</a></h2><p><strong><code>#include &lt;vector&gt;</code></strong></p>
+<p>连续的顺序的储存结构（和数组一样的类别），但是有长度可变的特性。</p>
+<h3 id="2-2-1-常用方法"><a href="#2-2-1-常用方法" class="headerlink" title="2.2.1 常用方法"></a>2.2.1 常用方法</h3><h4 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h4><p><strong><code>vector&lt;类型&gt; arr(长度, [初值])</code></strong></p>
+<p>时间复杂度：$O(n)$</p>
+<p>常用的一维和二维数组构造示例，高维也是一样的（就是会有点长）.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; arr;         <span class="comment">// 构造int数组</span></span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">arr</span><span class="params">(<span class="number">100</span>)</span></span>;    <span class="comment">// 构造初始长100的int数组</span></span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">arr</span><span class="params">(<span class="number">100</span>, <span class="number">1</span>)</span></span>; <span class="comment">// 构造初始长100的int数组，初值为1</span></span><br><span class="line"></span><br><span class="line">vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">mat</span>(<span class="number">100</span>, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt; ());       <span class="comment">// 构造初始100行，不指定列数的二维数组</span></span><br><span class="line">vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">mat</span>(<span class="number">100</span>, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt; (<span class="number">666</span>, <span class="number">-1</span>)) <span class="comment">// 构造初始100行，初始666列的二维数组，初值为-1</span></span><br></pre></td></tr></table></figure>
+<p>构造二维数组的奇葩写法，千万别用：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; arr[<span class="number">100</span>];         <span class="comment">// 正确，构造初始100行，不指定列数的二维数组，可用于链式前向星存图</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt; arr[<span class="number">100</span>](<span class="number">100</span>, <span class="number">1</span>); <span class="comment">// 语法错误！</span></span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">arr</span><span class="params">(<span class="number">100</span>, <span class="number">1</span>)</span>[100]</span>; <span class="comment">// 语法错误！</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt; arr[<span class="number">100</span>] &#123;&#123;<span class="number">100</span>, <span class="number">1</span>&#125;, 这里省略<span class="number">98</span>个 ,&#123;<span class="number">100</span>, <span class="number">1</span>&#125;&#125;; <span class="comment">// 正确但奇葩，使用列表初始化</span></span><br></pre></td></tr></table></figure>
+<h4 id="尾接-amp-尾删"><a href="#尾接-amp-尾删" class="headerlink" title="尾接 &amp; 尾删"></a>尾接 &amp; 尾删</h4><ul>
+<li><strong><code>.push_back(元素)</code></strong>：在 vector 尾接一个元素，数组长度 $+1$.</li>
+<li><strong><code>.pop_back()</code></strong>：删除 vector 尾部的一个元素，数组长度 $-1$</li>
+</ul>
+<p>时间复杂度：均摊 $O(1)$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// init: arr = []</span></span><br><span class="line">arr.<span class="built_in">push_back</span>(<span class="number">1</span>);</span><br><span class="line"><span class="comment">// after: arr = [1]</span></span><br><span class="line">arr.<span class="built_in">push_back</span>(<span class="number">2</span>);</span><br><span class="line"><span class="comment">// after: arr = [1, 2]</span></span><br><span class="line">arr.<span class="built_in">pop_back</span>();</span><br><span class="line"><span class="comment">// after: arr = [1]</span></span><br><span class="line">arr.<span class="built_in">pop_back</span>();</span><br><span class="line"><span class="comment">// after: arr = []</span></span><br></pre></td></tr></table></figure>
+<h4 id="中括号运算符"><a href="#中括号运算符" class="headerlink" title="中括号运算符"></a>中括号运算符</h4><p>和一般数组一样的作用</p>
+<p>时间复杂度：$O(1)$</p>
+<h4 id="获取长度"><a href="#获取长度" class="headerlink" title="获取长度"></a>获取长度</h4><p><strong><code>.size()</code></strong></p>
+<p>获取当前 vector 的长度</p>
+<p>时间复杂度：$O(1)$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; arr.<span class="built_in">size</span>(); i++)</span><br><span class="line">    cout &lt;&lt; a[i] &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<h4 id="清空"><a href="#清空" class="headerlink" title="清空"></a>清空</h4><p><strong><code>.clear()</code></strong></p>
+<p>清空 vector</p>
+<p>时间复杂度：$O(n)$</p>
+<h4 id="判空"><a href="#判空" class="headerlink" title="判空"></a>判空</h4><p><strong><code>.empty()</code></strong></p>
+<p>如果是空返回 <code>true</code> 反之返回 <code>false</code>.</p>
+<p>时间复杂度：$O(1)$</p>
+<h4 id="改变长度"><a href="#改变长度" class="headerlink" title="改变长度"></a>改变长度</h4><p><strong><code>.resize(新长度, [默认值])</code></strong></p>
+<p>修改 vector 的长度</p>
+<ul>
+<li>如果是缩短，则删除多余的值</li>
+<li>如果是扩大，且指定了默认值，则新元素均为默认值<strong>（旧元素不变）</strong></li>
+</ul>
+<p>时间复杂度：$O(n)$</p>
+<h3 id="2-2-2-适用情形"><a href="#2-2-2-适用情形" class="headerlink" title="2.2.2 适用情形"></a>2.2.2 适用情形</h3><p>一般情况 <code>vector</code> 可以替换掉普通数组，除非该题卡常。</p>
+<p>有些情况普通数组没法解决：$n\times m$ 的矩阵，$1\leq n,m\leq 10^6$ 且 $n\times m \leq 10^6$</p>
+<ul>
+<li>如果用普通数组 <code>int mat[1000010][1000010]</code>，浪费内存，会导致 MLE。</li>
+<li>如果使用 <code>vector&lt;vector&lt;int&gt;&gt; mat(n + 10, vector&lt;int&gt; (m + 10))</code>，完美解决该问题。</li>
+</ul>
+<p>另外，<code>vector</code> 的数据储存在堆空间中，不会爆栈。</p>
+<h3 id="2-2-3-注意事项"><a href="#2-2-3-注意事项" class="headerlink" title="2.2.3 注意事项"></a>2.2.3 注意事项</h3><h4 id="提前指定长度"><a href="#提前指定长度" class="headerlink" title="提前指定长度"></a>提前指定长度</h4><p>如果长度已经确定，那么应当直接在构造函数指定长度，而不是一个一个 <code>.push_back()</code>. 因为 <code>vector</code> 额外内存耗尽后的重分配是有时间开销的，直接指定长度就不会出现重分配了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 优化前: 522ms</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt; a;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1e8</span>; i++)</span><br><span class="line">    a.<span class="built_in">push_back</span>(i);</span><br><span class="line"><span class="comment">// 优化后: 259ms</span></span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">a</span><span class="params">(<span class="number">1e8</span>)</span></span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; a.<span class="built_in">size</span>(); i++)</span><br><span class="line">    a[i] = i;</span><br></pre></td></tr></table></figure>
+<h4 id="当心-size-t-溢出"><a href="#当心-size-t-溢出" class="headerlink" title="当心 size_t 溢出"></a>当心 size_t 溢出</h4><p>vector 获取长度的方法 <code>.size()</code> 返回值类型为 <code>size_t</code>，通常 OJ 平台使用的是 32 位编译器（有些平台例如 cf 可选 64 位），那么该类型范围为 $[0,2^{32})$.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">a</span><span class="params">(<span class="number">65536</span>)</span></span>;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> a = a.<span class="built_in">size</span>() * a.<span class="built_in">size</span>(); <span class="comment">// 直接溢出变成0了</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-3-栈-stack"><a href="#2-3-栈-stack" class="headerlink" title="2.3 栈 stack"></a>2.3 栈 <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/container/stack">stack</a></h2><p><strong><code>#include &lt;stack&gt;</code></strong></p>
+<p>通过二次封装双端队列 (deque) 容器，实现先进后出的栈数据结构。</p>
+<h3 id="2-3-1-常用方法"><a href="#2-3-1-常用方法" class="headerlink" title="2.3.1 常用方法"></a>2.3.1 常用方法</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>作用</th>
+<th>用法</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>构造</td>
+<td><code>stack&lt;类型&gt; stk</code></td>
+<td><code>stack&lt;int&gt; stk;</code></td>
+</tr>
+<tr>
+<td>进栈</td>
+<td><code>.push(元素)</code></td>
+<td><code>stk.push(1);</code></td>
+</tr>
+<tr>
+<td>出栈</td>
+<td><code>.pop()</code></td>
+<td><code>stk.pop();</code></td>
+</tr>
+<tr>
+<td>取栈顶</td>
+<td><code>.top()</code></td>
+<td><code>int a = stk.top();</code></td>
+</tr>
+<tr>
+<td>查看大小 / 清空 / 判空</td>
+<td>略</td>
+<td>略</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="2-3-2-适用情形"><a href="#2-3-2-适用情形" class="headerlink" title="2.3.2 适用情形"></a>2.3.2 适用情形</h3><p>如果不卡常的话，就可以直接用它而不需要手写栈了。</p>
+<p>另外，vector 也可以当栈用，vector 的 <code>.back()</code> 取尾部元素，就相当于取栈顶，<code>.push_back()</code> 相当于进栈，<code>.pop_back()</code> 相当于出栈。</p>
+<h3 id="2-3-3-注意事项"><a href="#2-3-3-注意事项" class="headerlink" title="2.3.3 注意事项"></a>2.3.3 注意事项</h3><p>不可访问内部元素！<strong>下面都是错误用法</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; stk.<span class="built_in">size</span>(); i++)</span><br><span class="line">    cout &lt;&lt; stk[i] &lt;&lt; endl;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> ele : stk)</span><br><span class="line">    cout &lt;&lt; stk &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<h2 id="2-4-队列-queue"><a href="#2-4-队列-queue" class="headerlink" title="2.4 队列 queue"></a>2.4 队列 <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/container/queue">queue</a></h2><p><strong><code>#include &lt;queue&gt;</code></strong></p>
+<p>通过二次封装双端队列 (deque) 容器，实现先进先出的队列数据结构。</p>
+<h3 id="2-4-1-常用方法"><a href="#2-4-1-常用方法" class="headerlink" title="2.4.1 常用方法"></a>2.4.1 常用方法</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>作用</th>
+<th>用法</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>构造</td>
+<td><code>queue&lt;类型&gt; que</code></td>
+<td><code>queue&lt;int&gt; que;</code></td>
+</tr>
+<tr>
+<td>进队</td>
+<td><code>.push(元素)</code></td>
+<td><code>que.push(1);</code></td>
+</tr>
+<tr>
+<td>出队</td>
+<td><code>.pop()</code></td>
+<td><code>que.pop();</code></td>
+</tr>
+<tr>
+<td>取队首</td>
+<td><code>.front()</code></td>
+<td><code>int a = que.front();</code></td>
+</tr>
+<tr>
+<td>取队尾</td>
+<td><code>.back()</code></td>
+<td><code>int a = que.back();</code></td>
+</tr>
+<tr>
+<td>查看大小 / 清空 / 判空</td>
+<td>略</td>
+<td>略</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="2-4-2-适用情形"><a href="#2-4-2-适用情形" class="headerlink" title="2.4.2 适用情形"></a>2.4.2 适用情形</h3><p>如果不卡常的话，就可以直接用它而不需要手写队列了。</p>
+<h3 id="2-4-3-注意事项"><a href="#2-4-3-注意事项" class="headerlink" title="2.4.3 注意事项"></a>2.4.3 注意事项</h3><p>不可访问内部元素！<strong>下面都是错误用法</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; que.<span class="built_in">size</span>(); i++)</span><br><span class="line">    cout &lt;&lt; que[i] &lt;&lt; endl;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> ele : que)</span><br><span class="line">    cout &lt;&lt; ele &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<h2 id="2-5-优先队列-priority-queue"><a href="#2-5-优先队列-priority-queue" class="headerlink" title="2.5 优先队列 priority_queue"></a>2.5 优先队列 <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/container/priority_queue">priority_queue</a></h2><p><strong><code>#include &lt;queue&gt;</code></strong></p>
+<p>提供常数时间的最大元素查找，对数时间的插入与提取，底层原理是二叉堆。</p>
+<h3 id="2-5-1-常用方法"><a href="#2-5-1-常用方法" class="headerlink" title="2.5.1 常用方法"></a>2.5.1 常用方法</h3><h4 id="构造-1"><a href="#构造-1" class="headerlink" title="构造"></a>构造</h4><p><strong><code>priority_queue&lt;类型, 容器, 比较器&gt; pque</code></strong></p>
+<ul>
+<li>类型：要储存的数据类型</li>
+<li>容器：储存数据的底层容器，默认为 <code>vector&lt;类型&gt;</code>，竞赛中保持默认即可</li>
+<li>比较器：比较大小使用的比较器，默认为 <code>less&lt;类型&gt;</code>，可自定义</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">priority_queue&lt;<span class="type">int</span>&gt; pque1;                            <span class="comment">// 储存int的大顶堆</span></span><br><span class="line">priority_queue&lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;, greater&lt;<span class="type">int</span>&gt;&gt; pque2; <span class="comment">// 储存int的小顶堆</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>对于需要自定义比较器的情况，涉及一些初学时容易看迷糊的语法（重载小括号运算符 / lambda 表达式），在此就不展开讲了。如果想要了解，可以查阅 cppreference 中的代码示例。</p>
+</blockquote>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>作用</th>
+<th>用法</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>进堆</td>
+<td><code>.push(元素)</code></td>
+<td><code>que.push(1);</code></td>
+</tr>
+<tr>
+<td>出堆</td>
+<td><code>.pop()</code></td>
+<td><code>que.pop();</code></td>
+</tr>
+<tr>
+<td>取堆顶</td>
+<td><code>.top()</code></td>
+<td><code>int a = que.top();</code></td>
+</tr>
+<tr>
+<td>查看大小 / 判空</td>
+<td>略</td>
+<td>略</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>进出队复杂度 $O(\log n)$，取堆顶 $O(1)$.</p>
+<h3 id="2-5-2-适用情形"><a href="#2-5-2-适用情形" class="headerlink" title="2.5.2 适用情形"></a>2.5.2 适用情形</h3><p>持续维护元素的有序性：每次向队列插入大小不定的元素，或者每次从队列里取出大小最小/最大的元素，元素数量 $n$，插入操作数量 $k$.</p>
+<ul>
+<li>每次插入后进行快速排序：$k\cdot n\log n$</li>
+<li>使用优先队列维护：$k\cdot\log n$</li>
+</ul>
+<h3 id="2-5-3-注意事项"><a href="#2-5-3-注意事项" class="headerlink" title="2.5.3 注意事项"></a>2.5.3 注意事项</h3><h4 id="仅堆顶可读"><a href="#仅堆顶可读" class="headerlink" title="仅堆顶可读"></a>仅堆顶可读</h4><p>只可访问堆顶，其他元素都无法读取到。<strong>下面是错误用法：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; pque[<span class="number">1</span>] &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<h4 id="所有元素不可写"><a href="#所有元素不可写" class="headerlink" title="所有元素不可写"></a>所有元素不可写</h4><p>堆中所有元素是不可修改的。<strong>下面是错误用法：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pque[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">pque.<span class="built_in">top</span>() = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p>如果你恰好要修改的是堆顶元素，那么是可以完成的：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> tp = pque.<span class="built_in">top</span>();</span><br><span class="line">pque.<span class="built_in">pop</span>();</span><br><span class="line">pque.<span class="built_in">push</span>(tp + <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="2-6-集合-set"><a href="#2-6-集合-set" class="headerlink" title="2.6 集合 set"></a>2.6 集合 <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/container/set">set</a></h2><p><strong><code>#include &lt;set&gt;</code></strong></p>
+<p>提供对数时间的插入、删除、查找的集合数据结构。底层原理是红黑树。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>集合三要素</th>
+<th>解释</th>
+<th>set</th>
+<th>multiset</th>
+<th>unordered_set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>确定性</td>
+<td>一个元素要么在集合中，要么不在</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>互异性</td>
+<td>一个元素仅可以在集合中出现一次</td>
+<td>✔</td>
+<td>❌（任意次）</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>无序性</td>
+<td>集合中的元素是没有顺序的</td>
+<td>❌（从小到大）</td>
+<td>❌（从小到大）</td>
+<td>✔</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="2-6-1-常用方法"><a href="#2-6-1-常用方法" class="headerlink" title="2.6.1 常用方法"></a>2.6.1 常用方法</h3><h4 id="构造-2"><a href="#构造-2" class="headerlink" title="构造"></a>构造</h4><p><strong><code>set&lt;类型, 比较器&gt; st</code></strong></p>
+<ul>
+<li>类型：要储存的数据类型</li>
+<li>比较器：比较大小使用的比较器，默认为 <code>less&lt;类型&gt;</code>，可自定义</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set&lt;<span class="type">int</span>&gt; st1;               <span class="comment">// 储存int的集合（从小到大）</span></span><br><span class="line">set&lt;<span class="type">int</span>, greater&lt;<span class="type">int</span>&gt;&gt; st2; <span class="comment">// 储存int的集合（从大到小）</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>对于需要自定义比较器的情况，涉及一些初学时容易看迷糊的语法（重载小括号运算符 / lambda 表达式），在此就不展开讲了。</p>
+</blockquote>
+<h4 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h4><p>可使用迭代器进行遍历：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (set&lt;<span class="type">int</span>&gt;::iterator it = st.<span class="built_in">begin</span>(); it != st.<span class="built_in">end</span>(); ++it)</span><br><span class="line">    cout &lt;&lt; *it &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p>基于范围的循环（C++ 11）：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;ele : st)</span><br><span class="line">    cout &lt;&lt; ele &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<h4 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>作用</th>
+<th>用法</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>插入元素</td>
+<td><code>.insert(元素)</code></td>
+<td><code>st.insert(1);</code></td>
+</tr>
+<tr>
+<td>删除元素</td>
+<td><code>.erase(元素)</code></td>
+<td><code>st.erase(2);</code></td>
+</tr>
+<tr>
+<td>查找元素</td>
+<td><code>.find(元素)</code></td>
+<td><code>auto it = st.find(1);</code></td>
+</tr>
+<tr>
+<td>判断元素是否存在</td>
+<td><code>.count(元素)</code></td>
+<td><code>st.count(3);</code></td>
+</tr>
+<tr>
+<td>查看大小 / 清空 / 判空</td>
+<td>略</td>
+<td>略</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>增删查时间复杂度均为 $O(\log n)$</p>
+<h3 id="2-6-2-适用情形"><a href="#2-6-2-适用情形" class="headerlink" title="2.6.2 适用情形"></a>2.6.2 适用情形</h3><ul>
+<li>元素去重：$[1,1,3,2,4,4]\to[1,2,3,4]$</li>
+<li>维护顺序：$[1,5,3,7,9]\to[1,3,5,7,9]$</li>
+<li>元素是否出现过：元素大小 $[-10^{18},10^{18}]$，元素数量 $10^6$，vis 数组无法实现，通过 set 可以完成。</li>
+</ul>
+<h3 id="2-6-3-注意事项"><a href="#2-6-3-注意事项" class="headerlink" title="2.6.3 注意事项"></a>2.6.3 注意事项</h3><h4 id="不存在下标索引"><a href="#不存在下标索引" class="headerlink" title="不存在下标索引"></a>不存在下标索引</h4><p>set 虽说可遍历，但仅可使用迭代器进行遍历，它不存在下标这一概念，无法通过下标访问到数据。<strong>下面是错误用法：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; st[<span class="number">0</span>] &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<h4 id="元素只读"><a href="#元素只读" class="headerlink" title="元素只读"></a>元素只读</h4><p>set 的迭代器取到的元素是只读的（因为是 const 迭代器），不可修改其值。如果要改，需要先 erase 再 insert. <strong>下面是错误用法：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; *st.<span class="built_in">begin</span>() &lt;&lt; endl; <span class="comment">// 正确。可读。</span></span><br><span class="line">*st.<span class="built_in">begin</span>() = <span class="number">1</span>;             <span class="comment">// 错误！不可写！</span></span><br></pre></td></tr></table></figure>
+<h4 id="不可用迭代器计算下标"><a href="#不可用迭代器计算下标" class="headerlink" title="不可用迭代器计算下标"></a>不可用迭代器计算下标</h4><p>set 的迭代器不能像 vector 一样相减得到下标。<strong>下面是错误用法：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> it = st.<span class="built_in">find</span>(<span class="number">2</span>);      <span class="comment">// 正确，返回2所在位置的迭代器。</span></span><br><span class="line"><span class="type">int</span> idx = it - st.<span class="built_in">begin</span>(); <span class="comment">// 错误！不可相减得到下标。</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-7-映射-map"><a href="#2-7-映射-map" class="headerlink" title="2.7 映射 map"></a>2.7 映射 <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/container/map">map</a></h2><p><strong><code>#include &lt;map&gt;</code></strong></p>
+<p>提供对数时间的有序键值对结构。底层原理是红黑树。</p>
+<p>映射：</p>
+<script type="math/tex; mode=display">
+\begin{matrix}
+1&\to&2\\
+2&\to&2\\
+3&\to&1\\
+4&\to&5\\
+&\vdots
+\end{matrix}</script><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>性质</th>
+<th>解释</th>
+<th>map</th>
+<th>multimap</th>
+<th>unordered_map</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>互异性</td>
+<td>一个键仅可以在映射中出现一次</td>
+<td>✔</td>
+<td>❌（任意次）</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>无序性</td>
+<td>键是没有顺序的</td>
+<td>❌（从小到大）</td>
+<td>❌（从小到大）</td>
+<td>✔</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="2-7-1-常用方法"><a href="#2-7-1-常用方法" class="headerlink" title="2.7.1 常用方法"></a>2.7.1 常用方法</h3><h4 id="构造-3"><a href="#构造-3" class="headerlink" title="构造"></a>构造</h4><p><strong><code>map&lt;键类型, 值类型, 比较器&gt; mp</code></strong></p>
+<ul>
+<li>键类型：要储存键的数据类型</li>
+<li>值类型：要储存值的数据类型</li>
+<li>比较器：键比较大小使用的比较器，默认为 <code>less&lt;类型&gt;</code>，可自定义</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; mp1;               <span class="comment">// int-&gt;int 的映射（键从小到大）</span></span><br><span class="line">map&lt;<span class="type">int</span>, <span class="type">int</span>, greater&lt;<span class="type">int</span>&gt;&gt; st2; <span class="comment">// int-&gt;int 的映射（键从大到小）</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>对于需要自定义比较器的情况，涉及一些初学时容易看迷糊的语法（重载小括号运算符 / lambda 表达式），在此就不展开讲了。</p>
+</blockquote>
+<h4 id="遍历-1"><a href="#遍历-1" class="headerlink" title="遍历"></a>遍历</h4><p>可使用迭代器进行遍历：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (map&lt;<span class="type">int</span>, <span class="type">int</span>&gt;::iterator it = mp.<span class="built_in">begin</span>(); it != mp.<span class="built_in">end</span>(); ++it)</span><br><span class="line">    cout &lt;&lt; it-&gt;first &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; it-&gt;second &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p>基于范围的循环（C++ 11）：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;pr : mp)</span><br><span class="line">    cout &lt;&lt; pr.first &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; pr.second &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p>结构化绑定 + 基于范围的循环（C++17）：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;[key, val] : mp)</span><br><span class="line">    cout &lt;&lt; key &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; val &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<h4 id="其他-2"><a href="#其他-2" class="headerlink" title="其他"></a>其他</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>作用</th>
+<th>用法</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>增 / 改 / 查元素</td>
+<td>中括号</td>
+<td><code>mp[1] = 2;</code></td>
+</tr>
+<tr>
+<td>查元素（返回迭代器）</td>
+<td><code>.find(元素)</code></td>
+<td><code>auto it = mp.find(1);</code></td>
+</tr>
+<tr>
+<td>删除元素</td>
+<td><code>.erase(元素)</code></td>
+<td><code>mp.erase(2);</code></td>
+</tr>
+<tr>
+<td>判断元素是否存在</td>
+<td><code>.count(元素)</code></td>
+<td><code>mp.count(3);</code></td>
+</tr>
+<tr>
+<td>查看大小 / 清空 / 判空</td>
+<td>略</td>
+<td>略</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>增删改查时间复杂度均为 $O(\log n)$</p>
+<h3 id="2-7-2-适用情形"><a href="#2-7-2-适用情形" class="headerlink" title="2.7.2 适用情形"></a>2.7.2 适用情形</h3><p>需要维护映射的场景可以使用：输入若干字符串，统计每种字符串的出现次数。(<code>map&lt;string, int&gt; mp</code>)</p>
+<h3 id="2-7-3-注意事项"><a href="#2-7-3-注意事项" class="headerlink" title="2.7.3 注意事项"></a>2.7.3 注意事项</h3><h4 id="中括号访问时默认值"><a href="#中括号访问时默认值" class="headerlink" title="中括号访问时默认值"></a>中括号访问时默认值</h4><p>如果使用中括号访问 map 时对应的键不存在，那么会新增这个键，并且值为默认值，因此中括号会影响键的存在性。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">map&lt;<span class="type">char</span>, <span class="type">int</span>&gt; mp;</span><br><span class="line">cout &lt;&lt; mp.<span class="built_in">count</span>(<span class="string">&#x27;a&#x27;</span>) &lt;&lt; endl; <span class="comment">// 0</span></span><br><span class="line">mp[<span class="string">&#x27;a&#x27;</span>];                       <span class="comment">// 即使什么都没做，此时mp[&#x27;a&#x27;]=0已经插入了</span></span><br><span class="line">cout &lt;&lt; mp.<span class="built_in">count</span>(<span class="string">&#x27;a&#x27;</span>) &lt;&lt; endl; <span class="comment">// 1</span></span><br><span class="line">cout &lt;&lt; mp[<span class="string">&#x27;a&#x27;</span>] &lt;&lt; endl;       <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+<h4 id="不可用迭代器计算下标-1"><a href="#不可用迭代器计算下标-1" class="headerlink" title="不可用迭代器计算下标"></a>不可用迭代器计算下标</h4><p>map 的迭代器不能像 vector 一样相减得到下标。<strong>下面是错误用法：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> it = mp.<span class="built_in">find</span>(<span class="string">&#x27;a&#x27;</span>);      <span class="comment">// 正确，返回2所在位置的迭代器。</span></span><br><span class="line"><span class="type">int</span> idx = it - mp.<span class="built_in">begin</span>();   <span class="comment">// 错误！不可相减得到下标。</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-8-字符串-string"><a href="#2-8-字符串-string" class="headerlink" title="2.8 字符串 string"></a>2.8 字符串 <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/string">string</a></h2><p><strong><code>#include &lt;string&gt;</code></strong></p>
+<p>顾名思义，就是储存字符串的。</p>
+<h3 id="2-8-1-常用方法"><a href="#2-8-1-常用方法" class="headerlink" title="2.8.1 常用方法"></a>2.8.1 常用方法</h3><h4 id="构造-4"><a href="#构造-4" class="headerlink" title="构造"></a>构造</h4><p>构造函数：<code>string(长度, 初值)</code></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string s1;           <span class="comment">// 构造字符串，为空</span></span><br><span class="line">string s2 = <span class="string">&quot;awa!&quot;</span>;  <span class="comment">// 构造字符串，并赋值awa!</span></span><br><span class="line"><span class="function">string <span class="title">s3</span><span class="params">(<span class="number">10</span>, <span class="string">&#x27;6&#x27;</span>)</span></span>;  <span class="comment">// 构造字符串，通过构造函数构造为6666666666</span></span><br></pre></td></tr></table></figure>
+<h4 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h4><p>C++</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string s;</span><br><span class="line">cin &gt;&gt; s;</span><br><span class="line">cout &lt;&lt; s;</span><br></pre></td></tr></table></figure>
+<p>C</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">string s;</span><br><span class="line"><span class="type">char</span> buf[<span class="number">100</span>];</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, &amp;buf);</span><br><span class="line">s = buf;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, s.<span class="built_in">c_str</span>());</span><br></pre></td></tr></table></figure>
+<h4 id="其他-3"><a href="#其他-3" class="headerlink" title="其他"></a>其他</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>作用</th>
+<th>用法</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>修改、查询指定下标字符</td>
+<td><code>[]</code></td>
+<td><code>s[1] = &#39;a&#39;;</code></td>
+</tr>
+<tr>
+<td>是否相同</td>
+<td><code>==</code></td>
+<td><code>if (s1 == s2) ...</code></td>
+</tr>
+<tr>
+<td>字符串连接</td>
+<td><code>+</code></td>
+<td><code>string s = s1 + s2;</code></td>
+</tr>
+<tr>
+<td>尾接字符串</td>
+<td><code>+=</code></td>
+<td><code>s += &quot;awa&quot;;</code></td>
+</tr>
+<tr>
+<td>取子串</td>
+<td><code>.substr(起始下标, 子串长度)</code></td>
+<td><code>string sub = s.substr(2, 10);</code></td>
+</tr>
+<tr>
+<td>查找字符串</td>
+<td><code>.find(字符串, 起始下标)</code></td>
+<td><code>int pos = s.find(&quot;awa&quot;);</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="数值与字符串互转（C-11）"><a href="#数值与字符串互转（C-11）" class="headerlink" title="数值与字符串互转（C++11）"></a>数值与字符串互转（C++11）</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>源</th>
+<th>目的</th>
+<th>函数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int / long long / float / double / long double</td>
+<td>string</td>
+<td>to_string()</td>
+</tr>
+<tr>
+<td>string</td>
+<td>int</td>
+<td>stoi()</td>
+</tr>
+<tr>
+<td>string</td>
+<td>long long</td>
+<td>stoll()</td>
+</tr>
+<tr>
+<td>string</td>
+<td>float</td>
+<td>stof()</td>
+</tr>
+<tr>
+<td>string</td>
+<td>double</td>
+<td>stod()</td>
+</tr>
+<tr>
+<td>string</td>
+<td>long double</td>
+<td>stold()</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="2-8-2-适用情形"><a href="#2-8-2-适用情形" class="headerlink" title="2.8.2 适用情形"></a>2.8.2 适用情形</h3><p>非常好用！<del>建议直接把字符数组扔了，赶快投入 string 的怀抱。</del></p>
+<h3 id="2-8-3-注意事项"><a href="#2-8-3-注意事项" class="headerlink" title="2.8.3 注意事项"></a>2.8.3 注意事项</h3><h4 id="尾接字符串一定要用"><a href="#尾接字符串一定要用" class="headerlink" title="尾接字符串一定要用 +="></a>尾接字符串一定要用 <code>+=</code></h4><p>string 的 += 运算符，将会在原字符串原地尾接字符串。而 + 了再 = 赋值，会先生成一个临时变量，在复制给 string.</p>
+<p>通常字符串长度可以很长，如果使用 + 字符串很容易就 TLE 了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 优化前: 15139ms</span></span><br><span class="line">string s;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5e5</span>; i++)</span><br><span class="line">    s = s + <span class="string">&quot;a&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 优化后: &lt; 1ms (计时器显示0)</span></span><br><span class="line">string s;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5e5</span>; i++)</span><br><span class="line">    s += <span class="string">&quot;a&quot;</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="substr-方法的奇葩参数"><a href="#substr-方法的奇葩参数" class="headerlink" title=".substr() 方法的奇葩参数"></a><code>.substr()</code> 方法的奇葩参数</h4><p>一定要注意，C++ string 的取子串的第一个参数是<strong>子串起点下标</strong>，第二个参数是<strong>子串长度</strong>。</p>
+<p>第二个参数不是子串终点！不是子串终点！要与 java 等其他语言区分开来。</p>
+<h4 id="find-方法的复杂度"><a href="#find-方法的复杂度" class="headerlink" title=".find() 方法的复杂度"></a><code>.find()</code> 方法的复杂度</h4><p>该方法实现为暴力实现，时间复杂度为 $O(n^2)$.</p>
+<p><del>不要幻想 STL 内置了个 $O(n)$ 的 KMP 算法</del></p>
+<h2 id="2-9-二元组-pair"><a href="#2-9-二元组-pair" class="headerlink" title="2.9 二元组 pair"></a>2.9 二元组 <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/utility/pair">pair</a></h2><p><strong><code>#include &lt;utility&gt;</code></strong></p>
+<p>顾名思义，就是储存二元组的。</p>
+<h3 id="2-9-1-常用方法"><a href="#2-9-1-常用方法" class="headerlink" title="2.9.1 常用方法"></a>2.9.1 常用方法</h3><h4 id="构造-5"><a href="#构造-5" class="headerlink" title="构造"></a>构造</h4><p><strong><code>pair&lt;第一个值类型, 第二个值类型&gt; pr</code></strong></p>
+<ul>
+<li>第一个值类型：要储存的第一个值的数据类型</li>
+<li>第二个值类型：要储存的第二个值的数据类型</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; p1;</span><br><span class="line">pair&lt;<span class="type">int</span>, <span class="type">long</span> <span class="type">long</span>&gt; p2;</span><br><span class="line">pair&lt;<span class="type">char</span>, <span class="type">int</span>&gt; p3;</span><br><span class="line"><span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
+<h4 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h4><p>老式</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pair&lt;<span class="type">int</span>, <span class="type">char</span>&gt; pr = <span class="built_in">make_pair</span>(<span class="number">1</span>, <span class="string">&#x27;a&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>列表构造 C++11</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pair&lt;<span class="type">int</span>, <span class="type">char</span>&gt; pr = &#123;<span class="number">1</span>, <span class="string">&#x27;a&#x27;</span>&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h4><p>直接取值</p>
+<ul>
+<li>取第一个值：<code>.first</code></li>
+<li>取第二个值：<code>.second</code></li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pair&lt;<span class="type">int</span>, <span class="type">char</span>&gt; pr = &#123;<span class="number">1</span>, <span class="string">&#x27;a&#x27;</span>&#125;;</span><br><span class="line"><span class="type">int</span> awa = pr.first;</span><br><span class="line"><span class="type">char</span> bwb = pr.second;</span><br></pre></td></tr></table></figure>
+<p>结构化绑定 C++17</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pair&lt;<span class="type">int</span>, <span class="type">char</span>&gt; pr = &#123;<span class="number">1</span>, <span class="string">&#x27;a&#x27;</span>&#125;;</span><br><span class="line"><span class="keyword">auto</span> &amp;[awa, bwb] = pr;</span><br></pre></td></tr></table></figure>
+<h4 id="判同"><a href="#判同" class="headerlink" title="判同"></a>判同</h4><p>直接用 <code>==</code> 运算符</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; p1 = &#123;<span class="number">1</span>, <span class="number">2</span>&#125;;</span><br><span class="line">pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; p2 = &#123;<span class="number">1</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">if</span> (p1 == p2) &#123; ... &#125; <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-9-2-适用场景"><a href="#2-9-2-适用场景" class="headerlink" title="2.9.2 适用场景"></a>2.9.2 适用场景</h3><p>所有需要二元组的场景均可使用，效率和自己定义结构体差不多。</p>
+<h3 id="2-9-3-注意事项"><a href="#2-9-3-注意事项" class="headerlink" title="2.9.3 注意事项"></a>2.9.3 注意事项</h3><p>无</p>
+<h1 id="3-迭代器简介"><a href="#3-迭代器简介" class="headerlink" title="3 迭代器简介"></a>3 迭代器简介</h1><h2 id="3-1-迭代器是什么？"><a href="#3-1-迭代器是什么？" class="headerlink" title="3.1 迭代器是什么？"></a>3.1 迭代器是什么？</h2><p>不搞抽象，直接举例。</p>
+<p>对于一个 vector，我们可以用下标遍历：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; a.<span class="built_in">size</span>(); i++)</span><br><span class="line">    cout &lt;&lt; a[i] &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p>我们同时也可以用迭代器来遍历：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (vector&lt;<span class="type">int</span>&gt;::iterator it = a.<span class="built_in">begin</span>(); it != a.<span class="built_in">end</span>(); ++it)</span><br><span class="line">    cout &lt;&lt; *it &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>a.begin()</code> 是一个迭代器，指向的是第一个元素</li>
+<li><code>a.end()</code> 是一个迭代器，指向的是最后一个元素<strong>再后面一位</strong></li>
+<li>上述迭代器具有自增运算符，自增则迭代器向下一个元素移动</li>
+<li>迭代器与指针相似，如果对它使用解引用运算符，即 <code>*it</code>，就能取到对应值了</li>
+</ul>
+<h2 id="3-2-为何需要迭代器？"><a href="#3-2-为何需要迭代器？" class="headerlink" title="3.2 为何需要迭代器？"></a>3.2 为何需要迭代器？</h2><p>很多数据结构并不是线性的（例如红黑树），对于非线性数据结构，下标是无意义的。无法使用下标来遍历整个数据结构。</p>
+<p>迭代器的作用就是定义某个数据结构的遍历方式，通过迭代器的增减，代表遍历到的位置，通过迭代器便能成功遍历非线性结构了。</p>
+<p>例如，set 的实现是红黑树，我们是没法用下标来访问元素的。但是通过迭代器，我们就能遍历 set 中的元素了：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (set&lt;<span class="type">int</span>&gt;::iterator it = st.<span class="built_in">begin</span>(); it != st.<span class="built_in">end</span>(); ++it)</span><br><span class="line">    cout &lt;&lt; *it &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<h2 id="3-3-迭代器用法"><a href="#3-3-迭代器用法" class="headerlink" title="3.3 迭代器用法"></a>3.3 迭代器用法</h2><p>对于 vector 容器，它的迭代器功能比较完整，以它举例：</p>
+<ul>
+<li><code>.begin()</code>：头迭代器</li>
+<li><code>.end()</code>：尾迭代器</li>
+<li><code>.rbegin()</code>：反向头迭代器</li>
+<li><code>.rend()</code>：反向尾迭代器</li>
+<li>迭代器 <code>+</code> 整型：将迭代器向后移动</li>
+<li>迭代器 <code>-</code> 整型：将迭代器向前移动</li>
+<li>迭代器 <code>++</code>：将迭代器向后移动 1 位</li>
+<li>迭代器 <code>--</code>：将迭代器向前移动 1 位</li>
+<li>迭代器 <code>-</code> 迭代器：两个迭代器的距离</li>
+<li><code>prev(it)</code>：返回 it 的前一个迭代器</li>
+<li><code>next(it)</code>：返回 it 的后一个迭代器</li>
+</ul>
+<p>对于其他容器，由于其结构特性，上面的功能不一定都有（例如 set 的迭代器是不能相减求距离的）</p>
+<h2 id="3-4-常见问题"><a href="#3-4-常见问题" class="headerlink" title="3.4 常见问题"></a>3.4 常见问题</h2><p><strong><code>.end()</code> 和 <code>.rend()</code> 指向的位置是无意义的值</strong></p>
+<p>对于一个长度为 10 的数组：<code>for (int i = 0; i &lt; 10; i++)</code>，第 10 位是不可访问的</p>
+<p>对于一个长度为 10 的容器：<code>for (auto it = a.begin(); it != a.end(); ++it)</code>，.end 是不可访问的</p>
+<p><strong>不同容器的迭代器功能可能不一样</strong></p>
+<p>迭代器细化的话有正向、反向、双向，每个容器的迭代器支持的运算符也可能不同，因此不同容器的迭代器细节很有可能是不一样的。</p>
+<p><strong>删除操作时需要警惕</strong></p>
+<p>为什么 3 没删掉？</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; a&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = a.<span class="built_in">begin</span>(); it != a.<span class="built_in">end</span>(); ++it)</span><br><span class="line">    <span class="keyword">if</span> (*it == <span class="number">2</span> || *it == <span class="number">3</span>)</span><br><span class="line">        a.<span class="built_in">erase</span>(it);</span><br><span class="line"><span class="comment">// a = [1, 3, 4]</span></span><br></pre></td></tr></table></figure>
+<p>为啥 RE 了？</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; a&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = a.<span class="built_in">begin</span>(); it != a.<span class="built_in">end</span>(); ++it)</span><br><span class="line">    <span class="keyword">if</span> (*it == <span class="number">4</span>)</span><br><span class="line">        a.<span class="built_in">erase</span>(it);</span><br></pre></td></tr></table></figure>
+<center><b>建议：如无必要，别用迭代器操作容器。（遍历与访问没关系）</b></center>
+
+
+
+<h1 id="4-常用算法"><a href="#4-常用算法" class="headerlink" title="4 常用算法"></a>4 常用算法</h1><h2 id="4-1-内容总览"><a href="#4-1-内容总览" class="headerlink" title="4.1 内容总览"></a>4.1 内容总览</h2><p>打勾的是本次将会详细讲解的，其他的是算法竞赛中建议学习的，不在下表列出的在比赛中基本用不到。</p>
+<p>（很多函数的功能很简单，自己都能快速写出来，但是使用函数可以让代码可读性变得更高，这在比赛中是至关紧要的）</p>
+<ul>
+<li><p>算法库 Algorithm</p>
+<ul>
+<li>[ ] <code>count()</code></li>
+<li>[ ] <code>find()</code></li>
+<li>[ ] <code>fill()</code></li>
+<li>[x] <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/algorithm/swap"><code>swap()</code></a></li>
+<li>[x] <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/algorithm/reverse"><code>reverse()</code></a></li>
+<li>[ ] <code>shuffle()</code> C++11</li>
+<li>[x] <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/algorithm/unique"><code>unique()</code></a></li>
+<li>[x] <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/algorithm/sort"><code>sort()</code></a></li>
+<li>[x] <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/algorithm/lower_bound"><code>lower_bound()</code></a> / <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/algorithm/upper_bound"><code>upper_bound()</code></a></li>
+<li>[x] <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/algorithm/max"><code>max()</code></a> / <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/algorithm/min"><code>min()</code></a></li>
+<li>[ ] <code>max_element()</code> / <code>min_element()</code></li>
+<li>[ ] <code>prev_permutation()</code> / <code>next_permutation()</code></li>
+</ul>
+</li>
+<li>数学函数 cmath<ul>
+<li>[x] <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/numeric/math/fabs"><code>abs()</code></a></li>
+<li>[x] <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/numeric/math/exp"><code>exp()</code></a></li>
+<li>[x] <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/numeric/math/log"><code>log()</code></a> / <code>log10()</code> / <code>log2()</code></li>
+<li>[x] <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/numeric/math/pow"><code>pow()</code></a></li>
+<li>[x] <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/numeric/math/sqrt"><code>sqrt()</code></a></li>
+<li>[ ] <code>sin()</code> / <code>cos()</code> / <code>tan()</code></li>
+<li>[ ] <code>asin()</code> / <code>acos()</code> / <code>atan()</code></li>
+<li>[ ] <code>sinh()</code> / <code>cosh()</code> / <code>tanh()</code></li>
+<li>[ ] <code>asinh()</code> / <code>acosh()</code> / <code>atanh()</code> C++11</li>
+<li>[x] <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/numeric/math/ceil"><code>ceil()</code></a> / <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/numeric/math/floor"><code>floor()</code></a></li>
+<li>[x] <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/numeric/math/round"><code>round()</code></a> C++11</li>
+</ul>
+</li>
+<li>数值算法 numeric<ul>
+<li>[ ] <code>iota()</code> C++11</li>
+<li>[ ] <code>accumulate()</code></li>
+<li>[x] <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/numeric/gcd"><code>gcd()</code></a> C++17</li>
+<li>[x] <a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/numeric/lcm"><code>lcm()</code></a> C++17</li>
+</ul>
+</li>
+<li>伪随机数生成 random<ul>
+<li>[ ] <code>mt19937</code></li>
+<li>[ ] <code>random_device()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="4-2-swap"><a href="#4-2-swap" class="headerlink" title="4.2 swap()"></a>4.2 <code>swap()</code></h2><p>交换两个变量的值</p>
+<p><strong>用法示例</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt; <span class="keyword">class</span> T &gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">swap</span><span class="params">( T&amp; a, T&amp; b )</span></span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">0</span>, b = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">swap</span>(a, b);</span><br><span class="line"><span class="comment">// now a = 1, b = 0</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> arr[<span class="number">10</span>] &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>&#125;;</span><br><span class="line"><span class="built_in">swap</span>(arr[<span class="number">4</span>], arr[<span class="number">6</span>]);</span><br><span class="line"><span class="comment">// now arr = &#123;0, 1, 2, 3, 6, 5, 4, 7, 8, 9&#125;</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意事项</strong></p>
+<p>这个 swap 参数是引用的，不需要像 C 语言一样取地址。</p>
+<h2 id="4-3-sort"><a href="#4-3-sort" class="headerlink" title="4.3 sort()"></a>4.3 <code>sort()</code></h2><p>使用快速排序给一个可迭代对象排序</p>
+<p><strong>用法示例</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt; <span class="keyword">class</span> RandomIt, <span class="keyword">class</span> Compare &gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">sort</span><span class="params">( RandomIt first, RandomIt last, Compare comp )</span></span>;</span><br></pre></td></tr></table></figure>
+<p>默认排序从小到大</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; arr&#123;<span class="number">1</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">9</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line"><span class="built_in">sort</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>());</span><br><span class="line"><span class="comment">// arr = [0, 1, 1, 1, 8, 9, 9]</span></span><br></pre></td></tr></table></figure>
+<p>如果要从大到小，则需要传比较器进去。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; arr&#123;<span class="number">1</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">9</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line"><span class="built_in">sort</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>(), <span class="built_in">greater</span>&lt;<span class="type">int</span>&gt;());</span><br><span class="line"><span class="comment">// arr = [9, 9, 8, 1, 1, 1, 0]</span></span><br></pre></td></tr></table></figure>
+<p>如果需要完成特殊比较，则需要手写比较器。</p>
+<p>比较器函数返回值是 bool 类型，传参是需要比较的两个元素。记我们定义的该比较操作为 $\star$：</p>
+<ul>
+<li>若 $a\star b$，则比较器函数应当返回 <code>true</code></li>
+<li>若 $a\not\star b$，则比较器函数应当返回 <code>false</code></li>
+</ul>
+<p><strong>注意：</strong>如果 $a=b$，比较器函数必须返回 <code>false</code></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; a, pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a.second != b.second)</span><br><span class="line">        <span class="keyword">return</span> a.second &lt; b.second;</span><br><span class="line">    <span class="keyword">return</span> a.first &gt; b.first;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    vector&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt; arr&#123;&#123;<span class="number">1</span>, <span class="number">9</span>&#125;, &#123;<span class="number">2</span>, <span class="number">9</span>&#125;, &#123;<span class="number">8</span>, <span class="number">1</span>&#125;, &#123;<span class="number">0</span>, <span class="number">0</span>&#125;&#125;;</span><br><span class="line">	<span class="built_in">sort</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>(), cmp);</span><br><span class="line">    <span class="comment">// arr = [(0, 0), (8, 1), (2, 9), (1, 9)]</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-4-lower-bound-upper-bound"><a href="#4-4-lower-bound-upper-bound" class="headerlink" title="4.4 lower_bound() / upper_bound()"></a>4.4 <code>lower_bound()</code> / <code>upper_bound()</code></h2><p>在<strong>已升序排序</strong>的元素中，应用二分查找检索指定元素，返回对应元素迭代器位置。<strong>找不到则返回尾迭代器。</strong></p>
+<ul>
+<li><code>lower_bound()</code>: 寻找 $\geq x$ 的第一个元素的位置</li>
+<li><code>upper_bound()</code>: 寻找 $&gt;x$ 的第一个元素的位置</li>
+</ul>
+<p>怎么找 $\leq x$ / $&lt; x$ 的第一个元素呢？</p>
+<ul>
+<li>$&gt;x$ 的第一个元素的前一个元素（如果有）便是 $\leq x$ 的第一个元素</li>
+<li>$\geq x$ 的第一个元素的前一个元素（如果有）便是 $&lt;x$ 的第一个元素</li>
+</ul>
+<p>返回的是迭代器，如何转成下标索引呢？减去头迭代器即可。</p>
+<p><strong>用法示例</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt; <span class="keyword">class</span> ForwardIt, <span class="keyword">class</span> T &gt;</span></span><br><span class="line"><span class="function">ForwardIt <span class="title">lower_bound</span><span class="params">( ForwardIt first, ForwardIt last, <span class="type">const</span> T&amp; value )</span></span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; arr&#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">9</span>&#125;;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt;::iterator it = <span class="built_in">lower_bound</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>(), <span class="number">7</span>);</span><br><span class="line"><span class="type">int</span> idx = it - arr.<span class="built_in">begin</span>();</span><br><span class="line"><span class="comment">// idx = 4</span></span><br></pre></td></tr></table></figure>
+<p>我们通常写成一行：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; arr&#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">9</span>&#125;;</span><br><span class="line">idx = <span class="built_in">lower_bound</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>(), <span class="number">7</span>) - arr.<span class="built_in">begin</span>(); <span class="comment">// 4</span></span><br><span class="line">idx = <span class="built_in">lower_bound</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>(), <span class="number">8</span>) - arr.<span class="built_in">begin</span>(); <span class="comment">// 4</span></span><br><span class="line">idx = <span class="built_in">upper_bound</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>(), <span class="number">7</span>) - arr.<span class="built_in">begin</span>(); <span class="comment">// 4</span></span><br><span class="line">idx = <span class="built_in">upper_bound</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>(), <span class="number">8</span>) - arr.<span class="built_in">begin</span>(); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-5-reverse"><a href="#4-5-reverse" class="headerlink" title="4.5 reverse()"></a>4.5 <code>reverse()</code></h2><p>反转一个可迭代对象的元素顺序</p>
+<p><strong>用法示例</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt; <span class="keyword">class</span> BidirIt &gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">reverse</span><span class="params">( BidirIt first, BidirIt last )</span></span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">arr</span><span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line"><span class="built_in">iota</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>(), <span class="number">1</span>);</span><br><span class="line"><span class="comment">// 1, 2, 3, 4, 5, 6, 7, 8, 9, 10</span></span><br><span class="line"><span class="built_in">reverse</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>());</span><br><span class="line"><span class="comment">// 10, 9, 8, 7, 6, 5, 4, 3, 2, 1</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-6-max-min"><a href="#4-6-max-min" class="headerlink" title="4.6 max() / min()"></a>4.6 <code>max()</code> / <code>min()</code></h2><p>返回最大值 / 最小值的<strong>数值</strong></p>
+<p><strong>用法示例</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> mx = <span class="built_in">max</span>(<span class="number">1</span>, <span class="number">2</span>); <span class="comment">// 2</span></span><br><span class="line"><span class="type">int</span> mn = <span class="built_in">min</span>(<span class="number">1</span>, <span class="number">2</span>); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>在 C++11 之后，可以使用列表构造语法传入一个列表，这样就能一次性给多个元素找最大值而不用套娃了：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Before C++11</span></span><br><span class="line"><span class="type">int</span> mx = <span class="built_in">max</span>(<span class="built_in">max</span>(<span class="number">1</span>, <span class="number">2</span>), <span class="built_in">max</span>(<span class="number">3</span>, <span class="number">4</span>)); <span class="comment">// 4</span></span><br><span class="line"><span class="type">int</span> mn = <span class="built_in">min</span>(<span class="built_in">min</span>(<span class="number">1</span>, <span class="number">2</span>), <span class="built_in">min</span>(<span class="number">3</span>, <span class="number">4</span>)); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// After C++11</span></span><br><span class="line"><span class="type">int</span> mx = <span class="built_in">max</span>(&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;); <span class="comment">// 4</span></span><br><span class="line"><span class="type">int</span> mn = <span class="built_in">min</span>(&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-7-unique"><a href="#4-7-unique" class="headerlink" title="4.7 unique()"></a>4.7 <code>unique()</code></h2><p>消除数组的重复<strong>相邻</strong>元素，数组长度不变，但是有效数据缩短，返回的是有效数据位置的结尾迭代器。</p>
+<p>例如：$[1,1,4,5,1,4]\to[1,4,5,1,4,\underline?]$，下划线位置为返回的迭代器指向。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt; <span class="keyword">class</span> ForwardIt &gt;</span></span><br><span class="line"><span class="function">ForwardIt <span class="title">unique</span><span class="params">( ForwardIt first, ForwardIt last )</span></span>;</span><br></pre></td></tr></table></figure>
+<p><strong>用法示例</strong></p>
+<p>单独使用 unique 并不能达成去重效果，因为它只消除<strong>相邻</strong>的重复元素。但是如果序列有序，那么它就能去重了。</p>
+<p>但是它去重后，序列尾部会产生一些无效数据：$[1,1,2,4,4,4,5]\to[1,2,4,5,\underline?,?,?]$，为了删掉这些无效数据，我们需要结合 erase.</p>
+<p>最终，给 vector 去重的写法便是：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; arr&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">4</span>&#125;;</span><br><span class="line"><span class="built_in">sort</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>());</span><br><span class="line">arr.<span class="built_in">erase</span>(<span class="built_in">unique</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>()), arr.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
+<h2 id="4-8-数学函数"><a href="#4-8-数学函数" class="headerlink" title="4.8 数学函数"></a>4.8 数学函数</h2><p>所有函数参数均支持 <code>int</code> / <code>long long</code> / <code>float</code> / <code>double</code> / <code>long double</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>公式</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$f(x)=\lvert x\rvert$</td>
+<td><code>abs(-1.0)</code></td>
+</tr>
+<tr>
+<td>$f(x)=e^x$</td>
+<td><code>exp(2)</code></td>
+</tr>
+<tr>
+<td>$f(x)=\ln x$</td>
+<td><code>log(3)</code></td>
+</tr>
+<tr>
+<td>$f(x,y)=x^y$</td>
+<td><code>pow(2, 3)</code></td>
+</tr>
+<tr>
+<td>$f(x)=\sqrt x$</td>
+<td><code>sqrt(2)</code></td>
+</tr>
+<tr>
+<td>$f(x)=\lceil x\rceil$</td>
+<td><code>ceil(2.1)</code></td>
+</tr>
+<tr>
+<td>$f(x)=\lfloor x\rfloor$</td>
+<td><code>floor(2.1)</code></td>
+</tr>
+<tr>
+<td>$f(x)=\left<x\right>$</td>
+<td><code>rount(2.1)</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>注意事项</strong></p>
+<p>由于浮点误差，有些的数学函数的行为可能与预期不符，导致 WA。如果你的操作数都是整型，那么用下面的写法会更稳妥。</p>
+<blockquote>
+<p>原文地址：<a target="_blank" rel="noopener" href="https://codeforces.com/blog/entry/107717">https://codeforces.com/blog/entry/107717</a></p>
+</blockquote>
+<ul>
+<li>$\lfloor\frac{a}{b}\rfloor$<ul>
+<li>别用：<code>floor(1.0 * a / b)</code></li>
+<li>要用：<code>a / b</code></li>
+</ul>
+</li>
+<li>$\lceil\frac{a}{b}\rceil$<ul>
+<li>别用：<code>ceil(1.0 * a / b)</code></li>
+<li>要用：<code>(a + b - 1) / b</code>  （$\lceil\frac{a}{b}\rceil=\lfloor\frac{a+b-1}{b}\rfloor$）</li>
+</ul>
+</li>
+<li>$\lfloor\sqrt a\rfloor$<ul>
+<li>别用：<code>(int) sqrt(a)</code></li>
+<li>要用：二分查找 <a target="_blank" rel="noopener" href="https://io.zouht.com/7.html">https://io.zouht.com/7.html</a></li>
+</ul>
+</li>
+<li>$a^b$<ul>
+<li>别用：<code>pow(a, b)</code></li>
+<li>要用：快速幂 <a target="_blank" rel="noopener" href="https://io.zouht.com/18.html">https://io.zouht.com/18.html</a></li>
+</ul>
+</li>
+<li>$\lfloor\log_2 a\rfloor$<ul>
+<li>别用：<code>log2(a)</code></li>
+<li>要用：<code>__lg</code> （不规范，但是这是竞赛）/ <code>bit_width</code>（C++20 可用）</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-9-gcd-lcm"><a href="#4-9-gcd-lcm" class="headerlink" title="4.9 gcd() / lcm()"></a>4.9 <code>gcd()</code> / <code>lcm()</code></h2><p>（C++17）返回最大公因数 / 最小公倍数</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x = <span class="built_in">gcd</span>(<span class="number">8</span>, <span class="number">12</span>); <span class="comment">// 4</span></span><br><span class="line"><span class="type">int</span> y = <span class="built_in">lcm</span>(<span class="number">8</span>, <span class="number">12</span>); <span class="comment">// 24</span></span><br></pre></td></tr></table></figure>
+<p>如果不是 C++17，但是是 GNU 编译器（g++），那么可以用内置函数 <code>__gcd()</code>.</p>
+<p>当然，<code>gcd</code> / <code>lcm</code> 函数也挺好写，直接写也行（欧几里得算法）：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!b)</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">gcd</span>(b, a % b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">lcm</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a / <span class="built_in">gcd</span>(a, b) * b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://eviden0.github.io">Eviden</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://eviden0.github.io/2024/02/25/STL%E6%80%BB%E7%BB%93/">https://eviden0.github.io/2024/02/25/STL%E6%80%BB%E7%BB%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/c5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="card-info-avatar"><div class="avatar-img"><img src="/img/logo.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-status-box"><div class="author-status"><g-emoji class="g-emoji" alias="palm_tree" fallback-src="https://lskypro.acozycotage.net/LightPicture/2022/12/fe1dc0402e623096.jpg">🐟</g-emoji><span>认真摸鱼中</span></div></div></div><div class="author-info__name">Eviden</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Eviden0"><i class="fab fa-github"></i><span>Follow Me To Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Eviden0" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/%E7%A7%81%E5%AF%86@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">😍看看看，还是tm的看~😍</div><div id="welcome-info"></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">1 前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E5%AE%B9%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text">2 常用容器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E5%86%85%E5%AE%B9%E6%80%BB%E8%A7%88"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 内容总览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E5%90%91%E9%87%8F-vector"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 向量 vector</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">2.2.1.</span> <span class="toc-text">2.2.1 常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E9%80%A0"><span class="toc-number">2.2.1.1.</span> <span class="toc-text">构造</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%BE%E6%8E%A5-amp-%E5%B0%BE%E5%88%A0"><span class="toc-number">2.2.1.2.</span> <span class="toc-text">尾接 &amp; 尾删</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E6%8B%AC%E5%8F%B7%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.2.1.3.</span> <span class="toc-text">中括号运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E9%95%BF%E5%BA%A6"><span class="toc-number">2.2.1.4.</span> <span class="toc-text">获取长度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%85%E7%A9%BA"><span class="toc-number">2.2.1.5.</span> <span class="toc-text">清空</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A4%E7%A9%BA"><span class="toc-number">2.2.1.6.</span> <span class="toc-text">判空</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%B9%E5%8F%98%E9%95%BF%E5%BA%A6"><span class="toc-number">2.2.1.7.</span> <span class="toc-text">改变长度</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-%E9%80%82%E7%94%A8%E6%83%85%E5%BD%A2"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.2.2 适用情形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.2.3.</span> <span class="toc-text">2.2.3 注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E5%89%8D%E6%8C%87%E5%AE%9A%E9%95%BF%E5%BA%A6"><span class="toc-number">2.2.3.1.</span> <span class="toc-text">提前指定长度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%93%E5%BF%83-size-t-%E6%BA%A2%E5%87%BA"><span class="toc-number">2.2.3.2.</span> <span class="toc-text">当心 size_t 溢出</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E6%A0%88-stack"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 栈 stack</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">2.3.1.</span> <span class="toc-text">2.3.1 常用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2-%E9%80%82%E7%94%A8%E6%83%85%E5%BD%A2"><span class="toc-number">2.3.2.</span> <span class="toc-text">2.3.2 适用情形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-3-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.3.3.</span> <span class="toc-text">2.3.3 注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E9%98%9F%E5%88%97-queue"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 队列 queue</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-1-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">2.4.1.</span> <span class="toc-text">2.4.1 常用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-2-%E9%80%82%E7%94%A8%E6%83%85%E5%BD%A2"><span class="toc-number">2.4.2.</span> <span class="toc-text">2.4.2 适用情形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-3-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.4.3.</span> <span class="toc-text">2.4.3 注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97-priority-queue"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 优先队列 priority_queue</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-1-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">2.5.1.</span> <span class="toc-text">2.5.1 常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E9%80%A0-1"><span class="toc-number">2.5.1.1.</span> <span class="toc-text">构造</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">2.5.1.2.</span> <span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-2-%E9%80%82%E7%94%A8%E6%83%85%E5%BD%A2"><span class="toc-number">2.5.2.</span> <span class="toc-text">2.5.2 适用情形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-3-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.5.3.</span> <span class="toc-text">2.5.3 注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%85%E5%A0%86%E9%A1%B6%E5%8F%AF%E8%AF%BB"><span class="toc-number">2.5.3.1.</span> <span class="toc-text">仅堆顶可读</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%80%E6%9C%89%E5%85%83%E7%B4%A0%E4%B8%8D%E5%8F%AF%E5%86%99"><span class="toc-number">2.5.3.2.</span> <span class="toc-text">所有元素不可写</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-%E9%9B%86%E5%90%88-set"><span class="toc-number">2.6.</span> <span class="toc-text">2.6 集合 set</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-1-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">2.6.1.</span> <span class="toc-text">2.6.1 常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E9%80%A0-2"><span class="toc-number">2.6.1.1.</span> <span class="toc-text">构造</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%81%8D%E5%8E%86"><span class="toc-number">2.6.1.2.</span> <span class="toc-text">遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96-1"><span class="toc-number">2.6.1.3.</span> <span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-2-%E9%80%82%E7%94%A8%E6%83%85%E5%BD%A2"><span class="toc-number">2.6.2.</span> <span class="toc-text">2.6.2 适用情形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-3-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.6.3.</span> <span class="toc-text">2.6.3 注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%AD%98%E5%9C%A8%E4%B8%8B%E6%A0%87%E7%B4%A2%E5%BC%95"><span class="toc-number">2.6.3.1.</span> <span class="toc-text">不存在下标索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E5%8F%AA%E8%AF%BB"><span class="toc-number">2.6.3.2.</span> <span class="toc-text">元素只读</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%8F%AF%E7%94%A8%E8%BF%AD%E4%BB%A3%E5%99%A8%E8%AE%A1%E7%AE%97%E4%B8%8B%E6%A0%87"><span class="toc-number">2.6.3.3.</span> <span class="toc-text">不可用迭代器计算下标</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-%E6%98%A0%E5%B0%84-map"><span class="toc-number">2.7.</span> <span class="toc-text">2.7 映射 map</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-1-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">2.7.1.</span> <span class="toc-text">2.7.1 常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E9%80%A0-3"><span class="toc-number">2.7.1.1.</span> <span class="toc-text">构造</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%81%8D%E5%8E%86-1"><span class="toc-number">2.7.1.2.</span> <span class="toc-text">遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96-2"><span class="toc-number">2.7.1.3.</span> <span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-2-%E9%80%82%E7%94%A8%E6%83%85%E5%BD%A2"><span class="toc-number">2.7.2.</span> <span class="toc-text">2.7.2 适用情形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-3-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.7.3.</span> <span class="toc-text">2.7.3 注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E6%8B%AC%E5%8F%B7%E8%AE%BF%E9%97%AE%E6%97%B6%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-number">2.7.3.1.</span> <span class="toc-text">中括号访问时默认值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%8F%AF%E7%94%A8%E8%BF%AD%E4%BB%A3%E5%99%A8%E8%AE%A1%E7%AE%97%E4%B8%8B%E6%A0%87-1"><span class="toc-number">2.7.3.2.</span> <span class="toc-text">不可用迭代器计算下标</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-%E5%AD%97%E7%AC%A6%E4%B8%B2-string"><span class="toc-number">2.8.</span> <span class="toc-text">2.8 字符串 string</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-1-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">2.8.1.</span> <span class="toc-text">2.8.1 常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E9%80%A0-4"><span class="toc-number">2.8.1.1.</span> <span class="toc-text">构造</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="toc-number">2.8.1.2.</span> <span class="toc-text">输入输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96-3"><span class="toc-number">2.8.1.3.</span> <span class="toc-text">其他</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BA%92%E8%BD%AC%EF%BC%88C-11%EF%BC%89"><span class="toc-number">2.8.1.4.</span> <span class="toc-text">数值与字符串互转（C++11）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-2-%E9%80%82%E7%94%A8%E6%83%85%E5%BD%A2"><span class="toc-number">2.8.2.</span> <span class="toc-text">2.8.2 适用情形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-3-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.8.3.</span> <span class="toc-text">2.8.3 注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%BE%E6%8E%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%80%E5%AE%9A%E8%A6%81%E7%94%A8"><span class="toc-number">2.8.3.1.</span> <span class="toc-text">尾接字符串一定要用 +&#x3D;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#substr-%E6%96%B9%E6%B3%95%E7%9A%84%E5%A5%87%E8%91%A9%E5%8F%82%E6%95%B0"><span class="toc-number">2.8.3.2.</span> <span class="toc-text">.substr() 方法的奇葩参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#find-%E6%96%B9%E6%B3%95%E7%9A%84%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">2.8.3.3.</span> <span class="toc-text">.find() 方法的复杂度</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-9-%E4%BA%8C%E5%85%83%E7%BB%84-pair"><span class="toc-number">2.9.</span> <span class="toc-text">2.9 二元组 pair</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-1-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">2.9.1.</span> <span class="toc-text">2.9.1 常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E9%80%A0-5"><span class="toc-number">2.9.1.1.</span> <span class="toc-text">构造</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC"><span class="toc-number">2.9.1.2.</span> <span class="toc-text">赋值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%96%E5%80%BC"><span class="toc-number">2.9.1.3.</span> <span class="toc-text">取值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A4%E5%90%8C"><span class="toc-number">2.9.1.4.</span> <span class="toc-text">判同</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-2-%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">2.9.2.</span> <span class="toc-text">2.9.2 适用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-3-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.9.3.</span> <span class="toc-text">2.9.3 注意事项</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%AE%80%E4%BB%8B"><span class="toc-number">3.</span> <span class="toc-text">3 迭代器简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 迭代器是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E4%B8%BA%E4%BD%95%E9%9C%80%E8%A6%81%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%9F"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 为何需要迭代器？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%94%A8%E6%B3%95"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 迭代器用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">3.4.</span> <span class="toc-text">3.4 常见问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">4 常用算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%E5%86%85%E5%AE%B9%E6%80%BB%E8%A7%88"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 内容总览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-swap"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 swap()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-sort"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 sort()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-lower-bound-upper-bound"><span class="toc-number">4.4.</span> <span class="toc-text">4.4 lower_bound() &#x2F; upper_bound()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5-reverse"><span class="toc-number">4.5.</span> <span class="toc-text">4.5 reverse()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-6-max-min"><span class="toc-number">4.6.</span> <span class="toc-text">4.6 max() &#x2F; min()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-7-unique"><span class="toc-number">4.7.</span> <span class="toc-text">4.7 unique()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-8-%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><span class="toc-number">4.8.</span> <span class="toc-text">4.8 数学函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-9-gcd-lcm"><span class="toc-number">4.9.</span> <span class="toc-text">4.9 gcd() &#x2F; lcm()</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/02/25/STL%E6%80%BB%E7%BB%93/" title="Untitled"><img src="/img/c5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Untitled"/></a><div class="content"><a class="title" href="/2024/02/25/STL%E6%80%BB%E7%BB%93/" title="Untitled">Untitled</a><time datetime="2024-02-25T14:58:28.929Z" title="Created 2024-02-25 22:58:28">2024-02-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/02/25/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%97%AE%E9%A2%98/" title="关于博客评论问题&amp;&amp;加载资源缓慢问题"><img src="https://icweiliimg1.pstatp.com/weili/bl/257489233706746094.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于博客评论问题&amp;&amp;加载资源缓慢问题"/></a><div class="content"><a class="title" href="/2024/02/25/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%97%AE%E9%A2%98/" title="关于博客评论问题&amp;&amp;加载资源缓慢问题">关于博客评论问题&amp;&amp;加载资源缓慢问题</a><time datetime="2024-02-25T07:09:28.000Z" title="Created 2024-02-25 15:09:28">2024-02-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/02/25/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" title="内网渗透"><img src="/img/c7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="内网渗透"/></a><div class="content"><a class="title" href="/2024/02/25/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" title="内网渗透">内网渗透</a><time datetime="2024-02-25T06:49:26.000Z" title="Created 2024-02-25 14:49:26">2024-02-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/02/25/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/" title="开源工具"><img src="/img/c8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="开源工具"/></a><div class="content"><a class="title" href="/2024/02/25/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/" title="开源工具">开源工具</a><time datetime="2024-02-25T06:41:44.000Z" title="Created 2024-02-25 14:41:44">2024-02-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/02/25/%E9%9D%B6%E6%9C%BA/" title="打靶 or  赛题  平台简介"><img src="/img/c2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="打靶 or  赛题  平台简介"/></a><div class="content"><a class="title" href="/2024/02/25/%E9%9D%B6%E6%9C%BA/" title="打靶 or  赛题  平台简介">打靶 or  赛题  平台简介</a><time datetime="2024-02-25T06:41:39.000Z" title="Created 2024-02-25 14:41:39">2024-02-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 By Eviden</div><div class="footer_custom_text">I wish you to become your own sun, no need to rely on who's light.<p><a target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Coding-0cedbe?style=flat&logo=Codio" title="本站采用双线部署，联通线路托管于Coding"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Toggle Between Traditional Chinese And Simplified Chinese">繁</button><a class="icon-V hidden" onclick="switchNightMode()" title="Toggle Between Light And Dark Mode"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i><span id="percent">0<span>%</span></span></button><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="/js/tw_cn.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'pIoCAZMXRx2ozYVgwYRR1H5F-MdYXbMMI',
+      appKey: 'K7Sq1MxUOU1hYYw54klpNoU6',
+      avatar: 'monsterid',
+      serverURLs: 'https://piocazmx.api.lncldglobal.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('/js/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.19.0/js/md5.min.js"></script><script>window.addEventListener('load', () => {
   const changeContent = (content) => {
     if (content === '') return content
 
@@ -353,11 +1181,21 @@ document.addEventListener('pjax:error', e => {
   }
 })</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.12.0"></script></div></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
     var parent = document.getElementById('recent-posts');
-    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="https://eviden0.github.io/tags/CTF/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🐼 🤖CTF🤖 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://eviden0.github.io/tags/Security/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🎮 😎玩靶机玩的😎 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://eviden0.github.io/tags/Life/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🐱‍👓 🥰生活趣闻🥰 (2)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://eviden0.github.io/tags/Coding/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">👩‍💻 😭代码&&算法😭 (2)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://eviden0.github.io/tags/教程杂谈/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💡 🐾教程杂谈🐾 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item" style="visibility: hidden"></div><a class="magnet_link_more"  href="https://eviden0.github.io/tags" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="https://eviden0.github.io/tags/CTF/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🐼 🤖CTF🤖 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://eviden0.github.io/tags/Security/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🎮 😎玩靶机玩的😎 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://eviden0.github.io/tags/Life/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🐱‍👓 🥰生活趣闻🥰 (2)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://eviden0.github.io/tags/Coding/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">👩‍💻 😭代码&&算法😭 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://eviden0.github.io/tags/教程杂谈/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💡 🐾教程杂谈🐾 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item" style="visibility: hidden"></div><a class="magnet_link_more"  href="https://eviden0.github.io/tags" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
     console.log('已挂载magnet')
     parent.insertAdjacentHTML("afterbegin",child)}
      </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #b30070}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
     <style></style><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover1.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Linux/&quot;);" href="javascript:void(0);">Linux</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr">Linux安全</span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover2.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/教程杂谈/&quot;);" href="javascript:void(0);">教程杂谈</a><span class="categoryBar-list-count">4</span><span class="categoryBar-list-descr">C++-STL</span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover3.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Python/&quot;);" href="javascript:void(0);">Python</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">杂七杂八环境配置</span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover4.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/内网渗透/&quot;);" href="javascript:void(0);">内网渗透</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">脚本小砸儿~</span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover5.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/开源工具/&quot;);" href="javascript:void(0);">开源工具</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">内网安全</span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover6.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/靶机/&quot;);" href="javascript:void(0);">靶机</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">开源工具&amp;&amp;脚本</span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='all'|| 'all' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
   function butterfly_swiper_injector_config(){
     var parent_div_git = document.getElementById('recent-posts');
     var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2024/02/25/关于博客评论问题/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://icweiliimg1.pstatp.com/weili/bl/257489233706746094.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-02-25</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2024/02/25/关于博客评论问题/&quot;);" href="javascript:void(0);" alt="">关于博客评论问题&amp;&amp;加载资源缓慢问题</a><div class="blog-slider__text">一些小问题~</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2024/02/25/关于博客评论问题/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2024/02/24/初始语法/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://justyy.com/wp-content/uploads/2016/01/markdown-syntax-language.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-02-24</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2024/02/24/初始语法/&quot;);" href="javascript:void(0);" alt="">Markdownの语法</a><div class="blog-slider__text">Markdown+Typora/VSCode 超全教程</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2024/02/24/初始语法/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2024/02/23/初始命令/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="/img/c9.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-02-23</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2024/02/23/初始命令/&quot;);" href="javascript:void(0);" alt="">初始命令</a><div class="blog-slider__text">Hexo_初始命令</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2024/02/23/初始命令/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2024/02/24/置顶轮播图/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="/img/c6.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-02-24</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2024/02/24/置顶轮播图/&quot;);" href="javascript:void(0);" alt="">置顶轮播图</a><div class="blog-slider__text">文章描述</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2024/02/24/置顶轮播图/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
@@ -381,17 +1219,7 @@ document.addEventListener('pjax:error', e => {
   else if (epage === cpage){
     butterfly_swiper_injector_config();
   }
-  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script data-pjax>
-    function butterfly_categories_card_injector_config(){
-      var parent_div_git = document.getElementById('recent-posts');
-      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover1.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Linux/&quot;);" href="javascript:void(0);">Linux</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr">Linux安全</span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover2.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/C/&quot;);" href="javascript:void(0);">C++</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">C++-STL</span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover3.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/教程杂谈/&quot;);" href="javascript:void(0);">教程杂谈</a><span class="categoryBar-list-count">4</span><span class="categoryBar-list-descr">杂七杂八环境配置</span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover4.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Python/&quot;);" href="javascript:void(0);">Python</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">脚本小砸儿~</span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover5.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/内网渗透/&quot;);" href="javascript:void(0);">内网渗透</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">内网安全</span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover6.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/开源工具/&quot;);" href="javascript:void(0);">开源工具</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">开源工具&amp;&amp;脚本</span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover6.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/靶机/&quot;);" href="javascript:void(0);">靶机</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">打靶记录</span></li></ul></div></div>';
-      console.log('已挂载butterfly_categories_card')
-      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
-      }
-    if( document.getElementById('recent-posts') && (location.pathname ==='all'|| 'all' ==='all')){
-    butterfly_categories_card_injector_config()
-    }
-  </script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
 for(var i = 0;i<arr.length;i++){
     arr[i].classList.add('wow');
     arr[i].classList.add('animate__zoomIn');
@@ -415,4 +1243,4 @@ for(var i = 0;i<arr.length;i++){
     arr[i].setAttribute('data-wow-delay', '');
     arr[i].setAttribute('data-wow-offset', '');
     arr[i].setAttribute('data-wow-iteration', '1');
-  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body></html>
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body></html>
