@@ -381,7 +381,7 @@ h6::before {
 /* 加载动画 */
 
 .loading-img {
-    background: url(https://s1.vika.cn/space/2024/02/28/fa96a497f3a34bd8b43c815b96967387) no-repeat center center;
+    background: url(/img/logo.jpeg) no-repeat center center;
     background-size: cover;
 }
 
