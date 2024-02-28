@@ -381,7 +381,7 @@ h6::before {
 /* 加载动画 */
 
 .loading-img {
-    background: url(/img/logo.jpeg) no-repeat center center;
+    background: url(https://webpage-images.pages.dev/logo.jpeg) no-repeat center center;
     background-size: cover;
 }
 
