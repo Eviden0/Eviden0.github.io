@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>记一次电脑无法打开热点问题解决</title>
+      <link href="/2024/03/11/2024-03-11-%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%94%B5%E8%84%91%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E7%83%AD%E7%82%B9%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+      <url>/2024/03/11/2024-03-11-%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%94%B5%E8%84%91%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E7%83%AD%E7%82%B9%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s1.vika.cn/space/2024/03/11/ff7a8569ccfe47efa76ead600273fab5" alt="" /></p><p>不知道哪来的bug出现这个问题。电脑莫名其妙就打不开热点,一开始以为是驱动的问题.可是我一直也没动这个驱动.</p><p>后在微软社区成功查到解决办法,根据社区描述说是游戏加速器这种第三方软件修改了什么东西导致的…无所谓能修复好就行!</p><hr /><p>若是有安装代理，加速器等，建议卸载。<br />然后在任务栏搜索框输入 设备 打开 设备管理器，确保网络适配器下没有其他应用添加的虚拟网卡。</p><p>然后到电脑品牌的官网下载网卡驱动，包括有线网，无线网，蓝牙3个驱动，请勿使用第三方的驱动安装程序。</p><p>然后在设备管理器中卸载网卡，卸载后安装一下刚刚下载好的网卡驱动。</p><p>然后参考以下链接恢复hosts文件：<br /><code>https://answers.microsoft.com/zh-hans/windows/f...</code><br />然后鼠标右键单击开始菜单→ “Windows PowerShell (管理员)”→输入：<br />（WIndows11中可能显示Windows 终端（管理员））<br />netsh winsock reset<br />（按下Enter键）<br />netsh int ip reset<br />（按下Enter键）<br />ipconfig /release<br />（按下Enter键）<br />ipconfig /renew<br />（按下Enter键）<br />ipconfig /flushdns<br />（按下Enter键）<br />ipconfig /registerdns<br />（按下Enter键）<br />inetcpl.cpl<br />▲（按下Enter键）（将打开Internet属性界面）▲<br />ncpa.cpl<br />◆（按下Enter键）（将打开网络链接面板）◆<br />▲在“Internet属性界面”点击“高级”，<br />点击“还原高级设置”，然后再点击“重置”（Windows11中没有“重置”按钮，请忽略此步骤）。<br />然后在上述选择框中找到：使用TLS1.0→→使用TLS1.1→→使用TLS1.2→→使用TLS1.3（实验），这4个打上勾，点击确定。▲<br />◆在 “网络链接面板”，鼠标右键单击需要设置的网络适配器→“属性””，<br />在“网络”属性窗口中双击 “Internet 协议版本4 (TCP / IPv4)”。<br />选择“自动获得IP地址”，<br />选择“自动获得DNS服务器地址”，<br />点击“确定”。◆<br />执行完毕上述方案后，重启设备。</p><hr /><p>切记在管理员命令行窗口执行!祝你成功!</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程杂谈 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>NSSCTF 3-11</title>
       <link href="/2024/03/11/2024-03-11-NSSCTF-3-11/"/>
       <url>/2024/03/11/2024-03-11-NSSCTF-3-11/</url>
