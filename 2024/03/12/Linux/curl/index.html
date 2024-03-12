@@ -1,0 +1,479 @@
+<!DOCTYPE html><html lang="zh_CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Eviden's Blog | Eviden's Blog</title><meta name="author" content="Eviden"><meta name="copyright" content="Eviden"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="curl 利用URL规则在命令行下工作的文件传输工具  补充说明 curl命令 是一个利用URL规则在命令行下工作的文件传输工具。它支持文件的上传和下载，所以是综合传输工具，但按传统，习惯称curl为下载工具。作为一款强力工具，curl支持包括HTTP、HTTPS、ftp等众多协议，还支持POST、cookies、认证、从指定偏移处下载部分文件、用户代理字符串、限速、文件大小、进度条等特征。做网">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Eviden&#39;s Blog">
+<meta property="og:url" content="https://www.eviden.top/2024/03/12/Linux/curl/index.html">
+<meta property="og:site_name" content="Eviden&#39;s Blog">
+<meta property="og:description" content="curl 利用URL规则在命令行下工作的文件传输工具  补充说明 curl命令 是一个利用URL规则在命令行下工作的文件传输工具。它支持文件的上传和下载，所以是综合传输工具，但按传统，习惯称curl为下载工具。作为一款强力工具，curl支持包括HTTP、HTTPS、ftp等众多协议，还支持POST、cookies、认证、从指定偏移处下载部分文件、用户代理字符串、限速、文件大小、进度条等特征。做网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.vika.cn/space/2024/02/28/8cbb2389199b44b7a42dadaf09efa18a">
+<meta property="article:published_time" content="2024-03-12T11:45:15.596Z">
+<meta property="article:modified_time" content="2024-03-04T07:03:34.000Z">
+<meta property="article:author" content="Eviden">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.vika.cn/space/2024/02/28/8cbb2389199b44b7a42dadaf09efa18a"><link rel="shortcut icon" href="https://s1.vika.cn/space/2024/02/28/7c3e6100aa9946929950f16011463293"><link rel="canonical" href="https://www.eviden.top/2024/03/12/Linux/curl/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.12.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":720,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":5000,"languages":{"author":"Author: Eviden","link":"Link: ","source":"Source: Eviden's Blog","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Eviden\'s Blog',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-04 15:03:34'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/progress_bar.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/cat.css"><link rel="stylesheet" href="/css/font.css"><link rel="stylesheet" href="/css/readPercent.css"><link rel="stylesheet" href="/css/iconfont.css"><link href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.10.2/katex.min.css" rel="stylesheet"><link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'"><div id="myscoll"></div><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="/css/progress_bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2024/02/28/fa96a497f3a34bd8b43c815b96967387" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">622</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://s1.vika.cn/space/2024/02/28/8cbb2389199b44b7a42dadaf09efa18a')"><nav id="nav"><span id="blog-info"><a href="/" title="Eviden's Blog"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2024/02/28/fa96a497f3a34bd8b43c815b96967387"/><span class="site-name">Eviden's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Untitled</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-03-12T11:45:15.596Z" title="Created 2024-03-12 19:45:15">2024-03-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-03-04T07:03:34.000Z" title="Updated 2024-03-04 15:03:34">2024-03-04</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>16mins</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="curl"><a class="markdownIt-Anchor" href="#curl"></a> curl</h1>
+<p>利用URL规则在命令行下工作的文件传输工具</p>
+<h2 id="补充说明"><a class="markdownIt-Anchor" href="#补充说明"></a> 补充说明</h2>
+<p><strong>curl命令</strong> 是一个利用URL规则在命令行下工作的文件传输工具。它支持文件的上传和下载，所以是综合传输工具，但按传统，习惯称curl为下载工具。作为一款强力工具，curl支持包括HTTP、HTTPS、ftp等众多协议，还支持POST、cookies、认证、从指定偏移处下载部分文件、用户代理字符串、限速、文件大小、进度条等特征。做网页处理流程和数据检索自动化，curl可以助一臂之力。</p>
+<h3 id="语法"><a class="markdownIt-Anchor" href="#语法"></a> 语法</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a class="markdownIt-Anchor" href="#选项"></a> 选项</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">-a   --append                                   <span class="comment"># 上传文件时，附加到目标文件 </span></span><br><span class="line">-A   --user-agent                               <span class="comment"># 设置用户代理发送给服务器 </span></span><br><span class="line">-anyauth                                        <span class="comment"># 可以使用“任何”身份验证方法 </span></span><br><span class="line">-b   --cookie                                   <span class="comment"># cookie字符串或文件读取位置 </span></span><br><span class="line">     --basic                                    <span class="comment"># 使用HTTP基本验证 </span></span><br><span class="line">-B   --use-ascii                                <span class="comment"># 使用ASCII /文本传输 </span></span><br><span class="line">-c   --cookie-jar                               <span class="comment"># 操作结束后把cookie写入到这个文件中 </span></span><br><span class="line">-C   --continue-at                              <span class="comment"># 断点续传 </span></span><br><span class="line">-d   --data                                     <span class="comment"># HTTP POST方式传送数据 </span></span><br><span class="line">     --data-ascii                               <span class="comment"># 以ascii的方式post数据 </span></span><br><span class="line">     --data-binary                              <span class="comment"># 以二进制的方式post数据 </span></span><br><span class="line">     --negotiate                                <span class="comment"># 使用HTTP身份验证 </span></span><br><span class="line">     --digest                                   <span class="comment"># 使用数字身份验证 </span></span><br><span class="line">     --disable-eprt                             <span class="comment"># 禁止使用EPRT或LPRT </span></span><br><span class="line">     --disable-epsv                             <span class="comment"># 禁止使用EPSV </span></span><br><span class="line">-D   --dump-header                              <span class="comment"># 把header信息写入到该文件中 </span></span><br><span class="line">     --egd-file                                 <span class="comment"># 为随机数据(SSL)设置EGD socket路径 </span></span><br><span class="line">     --tcp-nodelay                              <span class="comment"># 使用TCP\_NODELAY选项 </span></span><br><span class="line">-e   --referer                                  <span class="comment"># 来源网址 </span></span><br><span class="line">-E   --cert                                     <span class="comment"># 客户端证书文件和密码 (SSL)</span></span><br><span class="line">     --cert-type                                <span class="comment"># 证书文件类型 (DER/PEM/ENG) (SSL)</span></span><br><span class="line">     --key                                      <span class="comment"># 私钥文件名 (SSL)</span></span><br><span class="line">     --key-type                                 <span class="comment"># 私钥文件类型 (DER/PEM/ENG) (SSL)</span></span><br><span class="line">     --pass                                     <span class="comment"># 私钥密码 (SSL)</span></span><br><span class="line">     --engine                                   <span class="comment"># 加密引擎使用 (SSL). &quot;--engine list&quot; for list </span></span><br><span class="line">     --cacert                                   <span class="comment"># CA证书 (SSL)</span></span><br><span class="line">     --capath                                   <span class="comment"># CA目录 (made using c\_rehash) to verify peer against (SSL)</span></span><br><span class="line">     --ciphers                                  <span class="comment"># SSL密码 </span></span><br><span class="line">     --compressed                               <span class="comment"># 要求返回是压缩的形势 (using deflate or gzip)</span></span><br><span class="line">     --connect-timeout                          <span class="comment"># 设置最大请求时间 </span></span><br><span class="line">     --create-dirs                              <span class="comment"># 建立本地目录的目录层次结构 </span></span><br><span class="line">     --crlf                                     <span class="comment"># 上传是把LF转变成CRLF </span></span><br><span class="line">-f   --fail                                     <span class="comment"># 连接失败时不显示http错误 </span></span><br><span class="line">     --ftp-create-dirs                          <span class="comment"># 如果远程目录不存在，创建远程目录 </span></span><br><span class="line">     --ftp-method \[multicwd/nocwd/singlecwd]   <span class="comment"># 控制CWD的使用 </span></span><br><span class="line">     --ftp-pasv                                 <span class="comment"># 使用 PASV/EPSV 代替端口 </span></span><br><span class="line">     --ftp-skip-pasv-ip                         <span class="comment"># 使用PASV的时候,忽略该IP地址 </span></span><br><span class="line">     --ftp-ssl                                  <span class="comment"># 尝试用 SSL/TLS 来进行ftp数据传输 </span></span><br><span class="line">     --ftp-ssl-reqd                             <span class="comment"># 要求用 SSL/TLS 来进行ftp数据传输 </span></span><br><span class="line">-F   --form                                     <span class="comment"># 模拟http表单提交数据 </span></span><br><span class="line">     --form-string                              <span class="comment"># 模拟http表单提交数据 </span></span><br><span class="line">-g   --globoff                                  <span class="comment"># 禁用网址序列和范围使用&#123;&#125;和\[] </span></span><br><span class="line">-G   --get                                      <span class="comment"># 以get的方式来发送数据 </span></span><br><span class="line">-H   --header                                   <span class="comment"># 自定义头信息传递给服务器 </span></span><br><span class="line">     --ignore-content-length                    <span class="comment"># 忽略的HTTP头信息的长度 </span></span><br><span class="line">-i   --include                                  <span class="comment"># 输出时包括protocol头信息 </span></span><br><span class="line">-I   --<span class="built_in">head</span>                                     <span class="comment"># 只显示请求头信息 </span></span><br><span class="line">-j   --junk-session-cookies                     <span class="comment"># 读取文件进忽略session cookie </span></span><br><span class="line">     --interface                                <span class="comment"># 使用指定网络接口/地址 </span></span><br><span class="line">     --krb4                                     <span class="comment"># 使用指定安全级别的krb4 </span></span><br><span class="line">-k   --insecure                                 <span class="comment"># 允许不使用证书到SSL站点 </span></span><br><span class="line">-K   --config                                   <span class="comment"># 指定的配置文件读取 </span></span><br><span class="line">-l   --list-only                                <span class="comment"># 列出ftp目录下的文件名称 </span></span><br><span class="line">     --limit-rate                               <span class="comment"># 设置传输速度 </span></span><br><span class="line">     --local-port                               <span class="comment"># 强制使用本地端口号 </span></span><br><span class="line">-m   --max-time                                 <span class="comment"># 设置最大传输时间 </span></span><br><span class="line">     --max-redirs                               <span class="comment"># 设置最大读取的目录数 </span></span><br><span class="line">     --max-filesize                             <span class="comment"># 设置最大下载的文件总量 </span></span><br><span class="line">-M   --manual                                   <span class="comment"># 显示全手动 </span></span><br><span class="line">-n   --netrc                                    <span class="comment"># 从netrc文件中读取用户名和密码 </span></span><br><span class="line">     --netrc-optional                           <span class="comment"># 使用 .netrc 或者 URL来覆盖-n </span></span><br><span class="line">     --ntlm                                     <span class="comment"># 使用 HTTP NTLM 身份验证 </span></span><br><span class="line">-N   --no-buffer                                <span class="comment"># 禁用缓冲输出 </span></span><br><span class="line">-o   --output                                   <span class="comment"># 把输出写到该文件中 </span></span><br><span class="line">-O   --remote-name                              <span class="comment"># 把输出写到该文件中，保留远程文件的文件名 </span></span><br><span class="line">-p   --proxytunnel                              <span class="comment"># 使用HTTP代理 </span></span><br><span class="line">     --proxy-anyauth                            <span class="comment"># 选择任一代理身份验证方法 </span></span><br><span class="line">     --proxy-basic                              <span class="comment"># 在代理上使用基本身份验证 </span></span><br><span class="line">     --proxy-digest                             <span class="comment"># 在代理上使用数字身份验证 </span></span><br><span class="line">     --proxy-ntlm                               <span class="comment"># 在代理上使用ntlm身份验证 </span></span><br><span class="line">-P   --ftp-port                                 <span class="comment"># 使用端口地址，而不是使用PASV </span></span><br><span class="line">-q                                              <span class="comment"># 作为第一个参数，关闭 .curlrc </span></span><br><span class="line">-Q   --quote                                    <span class="comment"># 文件传输前，发送命令到服务器 </span></span><br><span class="line">-r   --range                                    <span class="comment"># 检索来自HTTP/1.1或FTP服务器字节范围 </span></span><br><span class="line">--range-file                                    <span class="comment"># 读取（SSL）的随机文件 </span></span><br><span class="line">-R   --remote-time                              <span class="comment"># 在本地生成文件时，保留远程文件时间 </span></span><br><span class="line">     --retry                                    <span class="comment"># 传输出现问题时，重试的次数 </span></span><br><span class="line">     --retry-delay                              <span class="comment"># 传输出现问题时，设置重试间隔时间 </span></span><br><span class="line">     --retry-max-time                           <span class="comment"># 传输出现问题时，设置最大重试时间 </span></span><br><span class="line">-s   --silent                                   <span class="comment"># 静默模式。不输出任何东西 </span></span><br><span class="line">-S   --show-error                               <span class="comment"># 显示错误 </span></span><br><span class="line">     --socks4                                   <span class="comment"># 用socks4代理给定主机和端口 </span></span><br><span class="line">     --socks5                                   <span class="comment"># 用socks5代理给定主机和端口 </span></span><br><span class="line">     --stderr                                   <span class="comment">#   </span></span><br><span class="line">-t   --telnet-option                            <span class="comment"># Telnet选项设置 </span></span><br><span class="line">     --trace                                    <span class="comment"># 对指定文件进行debug </span></span><br><span class="line">     --trace-ascii                              <span class="comment"># Like --跟踪但没有hex输出 </span></span><br><span class="line">     --trace-time                               <span class="comment"># 跟踪/详细输出时，添加时间戳 </span></span><br><span class="line">-T   --upload-file                              <span class="comment"># 上传文件 </span></span><br><span class="line">     --url &lt;url&gt;                                <span class="comment"># 要使用的 URL</span></span><br><span class="line">-u   --user                                     <span class="comment"># 设置服务器的用户和密码 </span></span><br><span class="line">-U   --proxy-user                               <span class="comment"># 设置代理用户名和密码 </span></span><br><span class="line">-w   --write-out \[format]                      <span class="comment"># 什么输出完成后 </span></span><br><span class="line">-x   --proxy                                    <span class="comment"># 在给定的端口上使用HTTP代理 </span></span><br><span class="line">-X   --request                                  <span class="comment"># 指定什么命令 </span></span><br><span class="line">-y   --speed-time                               <span class="comment"># 放弃限速所要的时间，默认为30 </span></span><br><span class="line">-Y   --speed-limit                              <span class="comment"># 停止传输速度的限制，速度时间 </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a class="markdownIt-Anchor" href="#实例"></a> 实例</h3>
+<h4 id="文件下载"><a class="markdownIt-Anchor" href="#文件下载"></a> <strong>文件下载</strong></h4>
+<p>curl命令可以用来执行下载、发送各种HTTP请求，指定HTTP头部等操作。如果系统没有curl可以使用<code>yum install curl</code>安装，也可以下载安装。curl是将下载文件输出到stdout，将进度信息输出到stderr，不显示进度信息使用<code>--silent</code>选项。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl URL --silent</span><br></pre></td></tr></table></figure>
+<p>这条命令是将下载文件输出到终端，所有下载的数据都被写入到stdout。</p>
+<p>使用选项<code>-O</code>将下载的数据写入到文件，必须使用文件的绝对地址：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://example.com/text.iso --silent -O</span><br></pre></td></tr></table></figure>
+<p>选项<code>-o</code>将下载数据写入到指定名称的文件中，并使用<code>--progress</code>显示进度条：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl http://example.com/test.iso -o filename.iso --progress</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">######################################## 100.0%</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="不输出错误和进度信息"><a class="markdownIt-Anchor" href="#不输出错误和进度信息"></a> <strong>不输出错误和进度信息</strong></h4>
+<p><code>-s</code> 参数将不输出错误和进度信息。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -s https://www.example.com</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上面命令一旦发生错误，不会显示错误信息。不发生错误的话，会正常显示运行结果。</span></span><br></pre></td></tr></table></figure>
+<p>如果想让 curl 不产生任何输出，可以使用下面的命令。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -s -o /dev/null https://example.com</span><br></pre></td></tr></table></figure>
+<h4 id="断点续传"><a class="markdownIt-Anchor" href="#断点续传"></a> <strong>断点续传</strong></h4>
+<p>curl能够从特定的文件偏移处继续下载，它可以通过指定一个偏移量来下载部分文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl URL/File -C 偏移量</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">偏移量是以字节为单位的整数，如果让curl自动推断出正确的续传位置使用-C -：</span></span><br><span class="line">curl -C -URL</span><br></pre></td></tr></table></figure>
+<h4 id="使用curl设置参照页字符串"><a class="markdownIt-Anchor" href="#使用curl设置参照页字符串"></a> <strong>使用curl设置参照页字符串</strong></h4>
+<p>参照页是位于HTTP头部中的一个字符串，用来表示用户是从哪个页面到达当前页面的，如果用户点击网页A中的某个连接，那么用户就会跳转到B网页，网页B头部的参照页字符串就包含网页A的URL。</p>
+<p>使用 <code>--referer</code> 选项指定参照页字符串：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl --referer http://www.example.com http://example.com</span><br></pre></td></tr></table></figure>
+<h4 id="用curl设置用户代理字符串"><a class="markdownIt-Anchor" href="#用curl设置用户代理字符串"></a> <strong>用curl设置用户代理字符串</strong></h4>
+<p>有些网站访问会提示只能使用IE浏览器来访问，这是因为这些网站设置了检查用户代理，可以使用curl把用户代理设置为IE，这样就可以访问了。使用 <code>--user-agent</code> 或者 <code>-A</code> 选项：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl URL --user-agent &quot;Mozilla/5.0&quot;</span><br><span class="line">curl URL -A &quot;Mozilla/5.0&quot;</span><br></pre></td></tr></table></figure>
+<p>其他HTTP头部信息也可以使用curl来发送，使用<code>-H</code>&quot;头部信息&quot; 传递多个头部信息，例如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -H &quot;Host:example.com&quot; -H &quot;accept-language:zh-cn&quot; URL</span><br></pre></td></tr></table></figure>
+<h4 id="curl的带宽控制和下载配额"><a class="markdownIt-Anchor" href="#curl的带宽控制和下载配额"></a> <strong>curl的带宽控制和下载配额</strong></h4>
+<p>使用<code>--limit-rate</code>限制curl的下载速度：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl URL --limit-rate 50k</span><br></pre></td></tr></table></figure>
+<p>命令中用k（千字节）和m（兆字节）指定下载速度限制。</p>
+<p>使用<code>--max-filesize</code>指定可下载的最大文件大小：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl URL --max-filesize bytes</span><br></pre></td></tr></table></figure>
+<p>如果文件大小超出限制，命令则返回一个非0退出码，如果命令正常则返回0。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl --limit-rate 200k https://example.com</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上面命令将带宽限制在每秒 200K 字节。</span></span><br></pre></td></tr></table></figure>
+<h4 id="用curl进行认证"><a class="markdownIt-Anchor" href="#用curl进行认证"></a> <strong>用curl进行认证</strong></h4>
+<p>使用curl选项 -u 可以完成HTTP或者FTP的认证，可以指定密码，也可以不指定密码在后续操作中输入密码：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -u user:pwd http://example.com</span><br><span class="line">curl -u user http://example.com</span><br></pre></td></tr></table></figure>
+<h4 id="只打印响应头部信息"><a class="markdownIt-Anchor" href="#只打印响应头部信息"></a> <strong>只打印响应头部信息</strong></h4>
+<p>通过<code>-I</code>或者<code>-head</code>可以只打印出HTTP头部信息：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost text]# curl -I http://example.com</span><br><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Content-Encoding: gzip</span><br><span class="line">Accept-Ranges: bytes</span><br><span class="line">Age: 275552</span><br><span class="line">Cache-Control: max-age=604800</span><br><span class="line">Content-Type: text/html; charset=UTF-8</span><br><span class="line">Date: Mon, 24 Apr 2023 14:39:36 GMT</span><br><span class="line">Etag: &quot;3147526947+gzip&quot;</span><br><span class="line">Expires: Mon, 01 May 2023 14:39:36 GMT</span><br><span class="line">Last-Modified: Thu, 17 Oct 2019 07:18:26 GMT</span><br><span class="line">Server: ECS (sec/96EE)</span><br><span class="line">X-Cache: HIT</span><br><span class="line">Content-Length: 648</span><br></pre></td></tr></table></figure>
+<h4 id="get-请求"><a class="markdownIt-Anchor" href="#get-请求"></a> <strong>GET 请求</strong></h4>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl &quot;http://www.example.com&quot;    # 如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地</span><br><span class="line">curl -i &quot;http://www.example.com&quot; # 显示全部信息</span><br><span class="line">curl -l &quot;http://www.example.com&quot; # 显示页面内容</span><br><span class="line">curl -v &quot;http://www.example.com&quot; # 显示get请求全过程解析</span><br></pre></td></tr></table></figure>
+<h4 id="post-请求"><a class="markdownIt-Anchor" href="#post-请求"></a> <strong>POST 请求</strong></h4>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">curl -d <span class="string">&quot;param1=value1&amp;param2=value2&quot;</span> <span class="string">&quot;http://www.example.com/login&quot;</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">curl -d<span class="string">&#x27;login=emma＆password=123&#x27;</span> -X POST https://example.com/login</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或者</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">curl -d <span class="string">&#x27;login=emma&#x27;</span> -d <span class="string">&#x27;password=123&#x27;</span> -X POST  https://example.com/login</span></span><br></pre></td></tr></table></figure>
+<p><code>--data-urlencode</code> 参数等同于 <code>-d</code>，发送 <code>POST</code> 请求的数据体，区别在于会自动将发送的数据进行 <code>URL</code> 编码。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl --data-urlencode &#x27;comment=hello world&#x27; https://example.com/login</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上面代码中，发送的数据hello world之间有一个空格，需要进行 URL 编码。</span></span><br></pre></td></tr></table></figure>
+<h4 id="发送本地文件中的文字"><a class="markdownIt-Anchor" href="#发送本地文件中的文字"></a> <strong>发送本地文件中的文字</strong></h4>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -d &#x27;@data.txt&#x27; https://example.com/upload</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">读取data.txt文件的内容，作为数据体向服务器发送。</span></span><br></pre></td></tr></table></figure>
+<h4 id="json-格式的-post-请求"><a class="markdownIt-Anchor" href="#json-格式的-post-请求"></a> <strong>JSON 格式的 POST 请求</strong></h4>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -l -H &quot;Content-type: application/json&quot; -X POST -d &#x27;&#123;&quot;phone&quot;:&quot;13888888888&quot;,&quot;password&quot;:&quot;test&quot;&#125;&#x27; http://example.com/apis/users.json</span><br></pre></td></tr></table></figure>
+<h4 id="向服务器发送-cookie"><a class="markdownIt-Anchor" href="#向服务器发送-cookie"></a> <strong>向服务器发送 Cookie</strong></h4>
+<p>使用<code>--cookie &quot;COKKIES&quot;</code>选项来指定cookie，多个cookie使用分号分隔：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://example.com --cookie &quot;user=root;pass=123456&quot;</span><br></pre></td></tr></table></figure>
+<p>将cookie另存为一个文件，使用<code>--cookie-jar</code>选项：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl URL --cookie-jar cookie_file</span><br></pre></td></tr></table></figure>
+<p><code>-b</code> 参数用来向服务器发送 Cookie。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -b &#x27;foo=bar&#x27; https://example.com</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上面命令会生成一个标头Cookie: foo=bar，向服务器发送一个名为foo、值为bar的 Cookie。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">curl -b &#x27;foo1=bar&#x27; -b &#x27;foo2=baz&#x27; https://example.com</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上面命令发送两个 Cookie。</span></span><br><span class="line"></span><br><span class="line">```shell</span><br><span class="line">curl -b cookies.txt https://www.example.com</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上面命令读取本地文件 cookies.txt，里面是服务器设置的 Cookie（参见-c参数），将其发送到服务器。</span></span><br></pre></td></tr></table></figure>
+<h4 id="cookie-写入一个文件"><a class="markdownIt-Anchor" href="#cookie-写入一个文件"></a> <strong>Cookie 写入一个文件</strong></h4>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -c cookies.txt https://www.example.com</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上面命令将服务器的 HTTP 回应所设置 Cookie 写入文本文件cookies.txt。</span></span><br></pre></td></tr></table></figure>
+<h4 id="请求的来源"><a class="markdownIt-Anchor" href="#请求的来源"></a> <strong>请求的来源</strong></h4>
+<p><code>-e</code> 参数用来设置 <code>HTTP</code> 的标头 <code>Referer</code>，表示请求的来源。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -e &#x27;https://example.com?q=example&#x27; https://www.example.com</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上面命令将Referer标头设为 https://example.com?q=example。</span></span><br></pre></td></tr></table></figure>
+<p><code>-H</code> 参数可以通过直接添加标头 <code>Referer</code>，达到同样效果。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -H &#x27;Referer: https://example.com?q=example&#x27; https://www.example.com</span><br></pre></td></tr></table></figure>
+<h4 id="上传二进制文件"><a class="markdownIt-Anchor" href="#上传二进制文件"></a> <strong>上传二进制文件</strong></h4>
+<p><code>-F</code> 参数用来向服务器上传二进制文件。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -F &#x27;file=@photo.png&#x27; https://example.com/profile</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上面命令会给 HTTP 请求加上标头 Content-Type: multipart/form-data ，然后将文件photo.png作为file字段上传。</span></span><br></pre></td></tr></table></figure>
+<p><code>-F</code> 参数可以指定 <code>MIME</code> 类型。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -F &#x27;file=@photo.png;type=image/png&#x27; https://example.com/profile</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上面命令指定 MIME 类型为image/png，否则 curl 会把 MIME 类型设为 application/octet-stream。</span></span><br></pre></td></tr></table></figure>
+<p><code>-F</code> 参数也可以指定文件名。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -F &#x27;file=@photo.png;filename=me.png&#x27; https://example.com/profile</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上面命令中，原始文件名为photo.png，但是服务器接收到的文件名为me.png。</span></span><br></pre></td></tr></table></figure>
+<h4 id="设置请求头"><a class="markdownIt-Anchor" href="#设置请求头"></a> <strong>设置请求头</strong></h4>
+<p><code>-H</code> 参数添加 <code>HTTP</code> 请求的标头。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -H &#x27;Accept-Language: en-US&#x27; https://example.com</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上面命令添加 HTTP 标头 Accept-Language: en-US。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -H &#x27;Accept-Language: en-US&#x27; -H &#x27;Secret-Message: xyzzy&#x27; https://example.com</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上面命令添加两个 HTTP 标头。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -d &#x27;&#123;&quot;login&quot;: &quot;emma&quot;, &quot;pass&quot;: &quot;123&quot;&#125;&#x27; -H &#x27;Content-Type: application/json&#x27; https://example.com/login</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上面命令添加 HTTP 请求的标头是 Content-Type: application/json，然后用 -d 参数发送 JSON 数据。</span></span><br></pre></td></tr></table></figure>
+<h4 id="跳过-ssl-检测"><a class="markdownIt-Anchor" href="#跳过-ssl-检测"></a> <strong>跳过 SSL 检测</strong></h4>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -k https://www.example.com</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上面命令不会检查服务器的 SSL 证书是否正确。</span></span><br></pre></td></tr></table></figure>
+<h4 id="请求跟随服务器的重定向"><a class="markdownIt-Anchor" href="#请求跟随服务器的重定向"></a> <strong>请求跟随服务器的重定向</strong></h4>
+<p><code>-L</code> 参数会让 <code>HTTP</code> 请求跟随服务器的重定向。<code>curl</code> 默认不跟随重定向。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L -d &#x27;tweet=hi&#x27; https://api.example.com/tweet</span><br></pre></td></tr></table></figure>
+<p>值得注意的是，这种重定向方式不适用于在返回的 HTML 中的重定向，比如这种是不被 curl 识别的重定向(这部分内容由 <code>curl -v -L &lt;url&gt;</code> 生成)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">* Connected to example.com (*.*.*.*) port 80 (#0)</span><br><span class="line">&gt; GET / HTTP/1.1</span><br><span class="line">&gt; Host: example.com</span><br><span class="line">&gt; User-Agent: curl/8.0.1</span><br><span class="line">&gt; Accept: */*</span><br><span class="line">&gt;</span><br><span class="line">&lt; HTTP/1.1 200 OK</span><br><span class="line">....</span><br><span class="line">&lt; Content-Type: text/html</span><br><span class="line">&lt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url=http://www.example.com/&quot;&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="调试参数"><a class="markdownIt-Anchor" href="#调试参数"></a> <strong>调试参数</strong></h4>
+<p><code>-v</code> 参数输出通信的整个过程，用于调试。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -v https://www.example.com</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">--trace参数也可以用于调试，还会输出原始的二进制数据。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl --trace - https://www.example.com</span><br></pre></td></tr></table></figure>
+<h4 id="获取本机外网-ip"><a class="markdownIt-Anchor" href="#获取本机外网-ip"></a> <strong>获取本机外网 IP</strong></h4>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl ipecho.net/plain</span><br></pre></td></tr></table></figure>
+<h4 id="使用-curl-测试网站加载速度"><a class="markdownIt-Anchor" href="#使用-curl-测试网站加载速度"></a> <strong>使用 curl 测试网站加载速度</strong></h4>
+<p>命令有一个鲜为人知的选项，<code>-w</code>，该选项在请求结束之后打印本次请求的统计数据到标准输出。</p>
+<p>首先，我们定义控制打印行为的格式化字符串。新建文本文件 <code>fmt.txt</code>，并填入下面的内容：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">\n</span><br><span class="line"><span class="title class_">Response</span> <span class="title class_">Time</span> <span class="symbol">for:</span> <span class="string">%&#123;url_effective&#125;</span>\n\n</span><br><span class="line"><span class="variable constant_">DNS</span> <span class="title class_">Lookup</span> <span class="title class_">Time</span><span class="symbol">:</span>\t\t<span class="string">%&#123;time_namelookup&#125;</span>s\n</span><br><span class="line"><span class="title class_">Redirection</span> <span class="title class_">Time</span><span class="symbol">:</span>\t\t<span class="string">%&#123;time_redirect&#125;</span>s\n</span><br><span class="line"><span class="title class_">Connection</span> <span class="title class_">Time</span><span class="symbol">:</span>\t\t<span class="string">%&#123;time_connect&#125;</span>s\n</span><br><span class="line"><span class="title class_">App</span> <span class="title class_">Connection</span> <span class="title class_">Time</span><span class="symbol">:</span>\t\t<span class="string">%&#123;time_appconnect&#125;</span>s\n</span><br><span class="line"><span class="title class_">Pre</span>-transfer <span class="title class_">Time</span><span class="symbol">:</span>\t\t<span class="string">%&#123;time_pretransfer&#125;</span>s\n</span><br><span class="line"><span class="title class_">Start</span>-transfer <span class="title class_">Time</span><span class="symbol">:</span>\t\t<span class="string">%&#123;time_starttransfer&#125;</span>s\n\n</span><br><span class="line"><span class="title class_">Total</span> <span class="title class_">Time</span><span class="symbol">:</span>\t\t\t<span class="string">%&#123;time_total&#125;</span>s\n</span><br></pre></td></tr></table></figure>
+<p>curl 提供了很多置换变量，可以在格式化字符串中通过 <code>%&#123;var&#125;</code> 的形式使用。完整的变量列表可以在 <code>curl</code> 的 <code>manpage</code> 中查看。简单介绍一下我们使用的这几个变量：</p>
+<ul>
+<li><code>url_effective</code>: 执行完地址重定向之后的最终 URL；</li>
+<li><code>time_namelookup</code>: 从请求开始至完成名称解析所花的时间，单位为秒，下同；</li>
+<li><code>time_redirect</code>: 执行所有重定向所花的时间；</li>
+<li><code>time_connect</code>: 从请求开始至建立 TCP 连接所花的时间；</li>
+<li><code>time_appconnect</code>: 从请求开始至完成 SSL/SSH 握手所花的时间；</li>
+<li><code>time_pretransfer</code>: 从请求开始至服务器准备传送文件所花的时间，包含了传送协商时间；</li>
+<li><code>time_starttransfer</code>: 从请求开始至服务器准备传送第一个字节所花的时间；</li>
+<li><code>time_total</code>: 完整耗时。</li>
+</ul>
+<p>然后执行请求，通过 @filename 指定保存了格式化字符串的文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L -s -w @fmt.txt -o /dev/null http://www.example.com</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Response Time <span class="keyword">for</span>: http:<span class="comment">//www.google.co.jp/?gfe_rd=cr&amp;dcr=0&amp;ei=cjIaWpTkHeiQ8QfnxYzoBA</span></span><br><span class="line"></span><br><span class="line">DNS Lookup Time:        <span class="number">0.000038</span>s</span><br><span class="line">Redirection Time:       <span class="number">0.207271</span>s</span><br><span class="line">Connection Time:        <span class="number">0.000039</span>s</span><br><span class="line">App Connection Time:    <span class="number">0.000039</span>s</span><br><span class="line">Pre-transfer Time:      <span class="number">0.000067</span>s</span><br><span class="line">Start-transfer Time:    <span class="number">0.260115</span>s</span><br><span class="line"></span><br><span class="line">Total Time:             <span class="number">0.467691</span>s</span><br></pre></td></tr></table></figure>
+<h4 id="要求返回是压缩的状态"><a class="markdownIt-Anchor" href="#要求返回是压缩的状态"></a> <strong>要求返回是压缩的状态</strong></h4>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">curl --compressed -o- -L https://yarnpkg.com/install.sh | bash</span></span><br><span class="line"><span class="meta prompt_">  % </span><span class="language-bash">Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span></span><br><span class="line">                                 Dload  Upload   Total   Spent    Left  Speed</span><br><span class="line">100    54  100    54    0     0     42      0  0:00:01  0:00:01 --:--:--    42</span><br><span class="line">100  2341  100  2341    0     0   1202      0  0:00:01  0:00:01 --:--:--  9289</span><br><span class="line">Installing Yarn!</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">Downloading tarball...</span></span><br><span class="line"></span><br><span class="line">[1/2]: https://yarnpkg.com/latest.tar.gz --&gt; /var/folders/j7/3xly5sk567s65ny5dnr__3b80000gn/T/yarn.tar.gz.XXXXXXXXXX.9hJsBsrA</span><br><span class="line"><span class="meta prompt_">  % </span><span class="language-bash">Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span></span><br><span class="line">                                 Dload  Upload   Total   Spent    Left  Speed</span><br><span class="line">100    57  100    57    0     0     72      0 --:--:-- --:--:-- --:--:--    72</span><br><span class="line">100    93  100    93    0     0     63      0  0:00:01  0:00:01 --:--:--    63</span><br><span class="line">100   643  100   643    0     0    248      0  0:00:02  0:00:02 --:--:--   707</span><br><span class="line">100 1215k  100 1215k    0     0   153k      0  0:00:07  0:00:07 --:--:--  305k</span><br><span class="line"></span><br><span class="line">[2/2]: https://yarnpkg.com/latest.tar.gz.asc --&gt; /var/folders/j7/3xly5sk567s65ny5dnr__3b80000gn/T/yarn.tar.gz.XXXXXXXXXX.9hJsBsrA.asc</span><br><span class="line">100    61  100    61    0     0    356      0 --:--:-- --:--:-- --:--:--   356</span><br><span class="line">100    97  100    97    0     0    325      0 --:--:-- --:--:-- --:--:--   325</span><br><span class="line">100   647  100   647    0     0   1283      0 --:--:-- --:--:-- --:--:--  1283</span><br><span class="line">100   832  100   832    0     0   1107      0 --:--:-- --:--:-- --:--:--  812k</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://www.eviden.top">Eviden</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://www.eviden.top/2024/03/12/Linux/curl/">https://www.eviden.top/2024/03/12/Linux/curl/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s1.vika.cn/space/2024/02/28/8cbb2389199b44b7a42dadaf09efa18a" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#curl"><span class="toc-text"> curl</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E"><span class="toc-text"> 补充说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-text"> 语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E9%A1%B9"><span class="toc-text"> 选项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-text"> 实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD"><span class="toc-text"> 文件下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E8%BE%93%E5%87%BA%E9%94%99%E8%AF%AF%E5%92%8C%E8%BF%9B%E5%BA%A6%E4%BF%A1%E6%81%AF"><span class="toc-text"> 不输出错误和进度信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%AD%E7%82%B9%E7%BB%AD%E4%BC%A0"><span class="toc-text"> 断点续传</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8curl%E8%AE%BE%E7%BD%AE%E5%8F%82%E7%85%A7%E9%A1%B5%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text"> 使用curl设置参照页字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8curl%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E4%BB%A3%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text"> 用curl设置用户代理字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#curl%E7%9A%84%E5%B8%A6%E5%AE%BD%E6%8E%A7%E5%88%B6%E5%92%8C%E4%B8%8B%E8%BD%BD%E9%85%8D%E9%A2%9D"><span class="toc-text"> curl的带宽控制和下载配额</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8curl%E8%BF%9B%E8%A1%8C%E8%AE%A4%E8%AF%81"><span class="toc-text"> 用curl进行认证</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AA%E6%89%93%E5%8D%B0%E5%93%8D%E5%BA%94%E5%A4%B4%E9%83%A8%E4%BF%A1%E6%81%AF"><span class="toc-text"> 只打印响应头部信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#get-%E8%AF%B7%E6%B1%82"><span class="toc-text"> GET 请求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#post-%E8%AF%B7%E6%B1%82"><span class="toc-text"> POST 请求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%91%E9%80%81%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E6%96%87%E5%AD%97"><span class="toc-text"> 发送本地文件中的文字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#json-%E6%A0%BC%E5%BC%8F%E7%9A%84-post-%E8%AF%B7%E6%B1%82"><span class="toc-text"> JSON 格式的 POST 请求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%91%E9%80%81-cookie"><span class="toc-text"> 向服务器发送 Cookie</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cookie-%E5%86%99%E5%85%A5%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6"><span class="toc-text"> Cookie 写入一个文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E7%9A%84%E6%9D%A5%E6%BA%90"><span class="toc-text"> 请求的来源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8A%E4%BC%A0%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6"><span class="toc-text"> 上传二进制文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%AF%B7%E6%B1%82%E5%A4%B4"><span class="toc-text"> 设置请求头</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%B3%E8%BF%87-ssl-%E6%A3%80%E6%B5%8B"><span class="toc-text"> 跳过 SSL 检测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E8%B7%9F%E9%9A%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-text"> 请求跟随服务器的重定向</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E8%AF%95%E5%8F%82%E6%95%B0"><span class="toc-text"> 调试参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%9C%AC%E6%9C%BA%E5%A4%96%E7%BD%91-ip"><span class="toc-text"> 获取本机外网 IP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-curl-%E6%B5%8B%E8%AF%95%E7%BD%91%E7%AB%99%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6"><span class="toc-text"> 使用 curl 测试网站加载速度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A6%81%E6%B1%82%E8%BF%94%E5%9B%9E%E6%98%AF%E5%8E%8B%E7%BC%A9%E7%9A%84%E7%8A%B6%E6%80%81"><span class="toc-text"> 要求返回是压缩的状态</span></a></li></ol></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 By Eviden</div><div class="footer_custom_text">I wish you to become your own sun, no need to rely on who's light.<p><a target="_blank" href="https://hexo.io/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="https://vercel.com/ "><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://vercel.com/ "><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Coding-0cedbe?style=flat&logo=Codio" title="本站采用双线部署，联通线路托管于Coding"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Toggle Between Traditional Chinese And Simplified Chinese">繁</button><a class="icon-V hidden" onclick="switchNightMode()" title="Toggle Between Light And Dark Mode"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i><span id="percent">0<span>%</span></span></button><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="/js/tw_cn.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>(() => {
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://comment.eviden.top/',
+      region: 'ap-shanghai',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.29/dist/twikoo.all.min.js').then(init)
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://comment.eviden.top/',
+      region: 'ap-shanghai',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else {
+      loadTwikoo()
+      GLOBAL_CONFIG_SITE.isPost && getCount()
+    }
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script><script async data-pjax src="/js/txmap.js"></script><div class="aplayer no-destroy" data-id="1497588709" data-server="netease" data-type="song" data-fixed="true" data-autoplay="true" data-volume="0.7" data-loop="one" preload="auto"> </div><script async src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer data-pjax src="/js/cat.js"></script><script defer data-pjax src="/js/readPercent.js"></script><script defer type="text/javascript" src="https://cdn1.tianli0.top/npm/sweetalert2@8.19.0/dist/sweetalert2.all.js"></script><script defer src="/js/lunar.js"></script><script defer src="/js/day.js"></script><script src="/js/sun_moon.js" async></script><script> let backimg =["url(https://webpage-images.pages.dev/bac.jpeg)","url(https://webpage-images.pages.dev/20240228200629.png)","url(https://webpage-images.pages.dev/20240228200700.png)","url(https://webpage-images.pages.dev/20240228200741.png)"];let index =Math.ceil(Math.random() * (backimg.length-1))-1;document.getElementById("web_bg").style.backgroundImage = backimg[index]</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-heart.min.js" async="async" mobile="true"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.12.0"></script></div></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="https://www.eviden.top/tags/CTF/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🐼 🤖CTF🤖 (16)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://www.eviden.top/tags/Security/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🎮 😎玩靶机玩的😎 (5)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://www.eviden.top/tags/Life/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🐱‍👓 🥰生活趣闻🥰 (3)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://www.eviden.top/tags/Coding/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">👩‍💻 😭代码&&算法😭 (3)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://www.eviden.top/tags/教程杂谈/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💡 🐾教程杂谈🐾 (2)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item" style="visibility: hidden"></div><a class="magnet_link_more"  href="https://www.eviden.top/tags" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(33.333333333333336% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #b30070}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover1.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Linux/&quot;);" href="javascript:void(0);">Linux</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover2.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/C/&quot;);" href="javascript:void(0);">C++</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover3.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Python/&quot;);" href="javascript:void(0);">Python</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover4.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/教程杂谈/&quot;);" href="javascript:void(0);">教程杂谈</a><span class="categoryBar-list-count">5</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover5.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/内网渗透/&quot;);" href="javascript:void(0);">内网渗透</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover6.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/开源工具/&quot;);" href="javascript:void(0);">开源工具</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover6.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/靶机/&quot;);" href="javascript:void(0);">靶机</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2024/02/25/关于博客评论问题/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://icweiliimg1.pstatp.com/weili/bl/257489233706746094.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-02-25</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2024/02/25/关于博客评论问题/&quot;);" href="javascript:void(0);" alt="">关于博客评论问题&amp;&amp;加载资源缓慢问题</a><div class="blog-slider__text">一些小问题~</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2024/02/25/关于博客评论问题/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2024/02/24/初始语法/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://justyy.com/wp-content/uploads/2016/01/markdown-syntax-language.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-02-24</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2024/02/24/初始语法/&quot;);" href="javascript:void(0);" alt="">Markdownの语法</a><div class="blog-slider__text">Markdown+Typora/VSCode 超全教程</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2024/02/24/初始语法/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2024/02/23/初始命令/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2024/02/28/c24645940b0b4ea78fd5bf554e5b7c15" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-02-23</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2024/02/23/初始命令/&quot;);" href="javascript:void(0);" alt="">初始命令</a><div class="blog-slider__text">Hexo_初始命令</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2024/02/23/初始命令/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2024/02/24/置顶轮播图/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2024/02/28/457a0f4e84d04159891d645ed060a054" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-02-24</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2024/02/24/置顶轮播图/&quot;);" href="javascript:void(0);" alt="">置顶轮播图</a><div class="blog-slider__text">文章描述</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2024/02/24/置顶轮播图/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('pagination');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__backInUp');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body></html>
